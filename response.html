@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Blu AI</title>
+    <link rel="canonical" href="https://blu.schooltool.io/response.html">
+    <meta property="og:url" content="https://blu.schooltool.io/response.html">
+    <meta name="description" content="A complex, smart AI that can strategically handle problems and chat with you">
+    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.png?h=1c946d0ddbf5b41cfc33d8f52d4514d6">
+    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.png?h=1c946d0ddbf5b41cfc33d8f52d4514d6">
+    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.png?h=1c946d0ddbf5b41cfc33d8f52d4514d6">
+    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.png?h=1c946d0ddbf5b41cfc33d8f52d4514d6">
+    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.png?h=1c946d0ddbf5b41cfc33d8f52d4514d6">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css?h=a5485e0ab00205da91ef331b68d4354e">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic&amp;display=swap">
+    <link rel="stylesheet" href="/assets/fonts/font-awesome.min.css?h=bb270fba1988038f5680f75b7475565e">
+    <link rel="stylesheet" href="/assets/css/style.css?h=2115578551f42ae42ddf3ddacb05c3e7">
+</head>
+
+<body style="background: #171717;color: rgb(255,255,255);">
+    <!-- Start: Navbar With Button -->
+    <nav class="navbar navbar-light navbar-expand-md sticky-top py-3" style="margin-top: -21px;background: #000000;text-decoration: none;">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="/ask.html"><img src="/assets/img/final_transparent.png?h=1c946d0ddbf5b41cfc33d8f52d4514d6" style="height: auto;width: 30px;background: linear-gradient(var(--bs-red), var(--bs-blue));border-radius: 6px;margin-right: 10px;" width="50" height="67"><span style="color: #ffffff;font-weight: bold;">Blu</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-2">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="#" style="color: #ffffff;">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" style="color: #ffffff;">About</a></li>
+                </ul><button class="btn btn-primary" type="button" style="margin-right: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-file-earmark-person-fill" style="font-size: 22px;">
+                        <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm2 5.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-.245S4 12 8 12s5 1.755 5 1.755z"></path>
+                    </svg>&nbsp;Sign up</button><button class="btn btn-primary" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person-badge-fill" style="font-size: 22px;">
+                        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm4.5 0a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm5 2.755C12.146 12.825 10.623 12 8 12s-4.146.826-5 1.755V14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-.245z"></path>
+                    </svg>&nbsp; Login</button>
+            </div>
+        </div>
+    </nav><!-- End: Navbar With Button -->
+    <header class="text-center text-white masthead" style="background: url('/assets/img/bg-masthead.jpg?h=ee9b21759e86acff127259186b5f0e4a')no-repeat center center;background-size: cover;"><img src="/assets/img/final_transparent.png?h=1c946d0ddbf5b41cfc33d8f52d4514d6" width="270" height="381" style="height: auto;width: 150px;margin-top: -75px;">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 col-xl-7 mx-auto position-relative">
+                    <h1 style="margin: 15px;margin-top: 0px;">Blu Says...</h1><div style="width: 100%;border-width: 8.4px;border-style: solid;border-radius: 8px;height: 100%;padding: 20px;">
+    <p id="responder"></p>
+</div>
+<script>
+    // Get the "response" parameter from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const encodedResponse = urlParams.get('response');
+
+    // Decode the response from Base64
+    const decodedResponse = atob(encodedResponse);
+
+    // Typing animation letter by letter
+    const responder = document.getElementById("responder");
+    let index = 0;
+
+    function typeWriter() {
+        if (index < decodedResponse.length) {
+            responder.innerHTML += decodedResponse.charAt(index);
+            index++;
+            setTimeout(typeWriter, 1); // Adjust the delay between letters (in milliseconds)
+        }
+    }
+
+    // Start the typing animation
+    typeWriter();
+</script>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <footer class="bg-light footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 text-center text-lg-start my-auto h-100">
+                    <ul class="list-inline mb-2">
+                        <li class="list-inline-item"><a href="#">About</a></li>
+                        <li class="list-inline-item"><span>⋅</span></li>
+                        <li class="list-inline-item"><a href="#">Contact</a></li>
+                        <li class="list-inline-item"><span>⋅</span></li>
+                        <li class="list-inline-item"><a href="#">Terms of &nbsp;Use</a></li>
+                        <li class="list-inline-item"><span>⋅</span></li>
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                    </ul>
+                    <p class="text-muted small mb-4 mb-lg-0">© BluCrest Ai 2023. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 text-center text-lg-end my-auto h-100">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook fa-2x fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter fa-2x fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-instagram fa-2x fa-fw"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/assets/bootstrap/js/bootstrap.min.js?h=79ff9637b74326c362fb6f7f5801a7ba"></script>
+    <script src="/assets/js/bs-init.js?h=ec5d4df3c798a2943b2ecbac76ebfde0"></script>
+    <script src="/assets/js/Bold-BS4-Jumbotron-with-Particles-js-particles-js.js?h=3dbacf5447e4dfdc27d100c3d6195a6d"></script>
+</body>
+
+</html>

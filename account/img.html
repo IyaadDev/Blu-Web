@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Blu</title>
+    <link rel="canonical" href="https://blu.schooltool.io/account/img.html">
+    <meta property="og:url" content="https://blu.schooltool.io/account/img.html">
+    <meta name="description" content="A complex, smart AI that can strategically handle problems and chat with you">
+    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.png?h=1c946d0ddbf5b41cfc33d8f52d4514d6">
+    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.png?h=1c946d0ddbf5b41cfc33d8f52d4514d6">
+    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.png?h=1c946d0ddbf5b41cfc33d8f52d4514d6">
+    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.png?h=1c946d0ddbf5b41cfc33d8f52d4514d6">
+    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.png?h=1c946d0ddbf5b41cfc33d8f52d4514d6">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css?h=a5485e0ab00205da91ef331b68d4354e">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic&amp;display=swap">
+    <link rel="stylesheet" href="/assets/css/style.css?h=2115578551f42ae42ddf3ddacb05c3e7">
+</head>
+
+<body class="text-center" style="height: 1000px;background: rgb(23,23,23);color: rgb(255,255,255);">
+    <!-- Start: Navbar With Button -->
+    <nav class="navbar navbar-light navbar-expand-md sticky-top py-3" style="background: #171717;padding: 0px;height: 57.9px;">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="/account/index.html"><img src="/assets/img/final_transparent.png?h=1c946d0ddbf5b41cfc33d8f52d4514d6" style="height: auto;width: 30px;background: linear-gradient(var(--bs-red), var(--bs-blue));border-radius: 6px;margin-right: 10px;" width="50" height="67"><span style="color: #ffffff;font-weight: bold;">Blu</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#" style="color: #ffffff;">Ask</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" style="color: #ffffff;">Imaginator</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" style="color: #ffffff;">Story Writer</a></li>
+                </ul><button class="btn btn-primary" type="button">Account</button>
+            </div>
+        </div>
+    </nav><!-- End: Navbar With Button -->
+    <header style="margin-top: 123px;"><img src="/assets/img/final_transparent.png?h=1c946d0ddbf5b41cfc33d8f52d4514d6" width="270" height="381" style="height: auto;width: 150px;margin-top: -75px;">
+        <h1 class="text-center" style="font-size: 79px;">Imaginator</h1>
+        <p class="text-center">Currently using:&nbsp;<a href="#">imaginator-cheap-256x256</a></p>
+        <div class="container"><form>
+    <div class="row">
+        <div class="col-12 col-md-9 mb-2 mb-md-0"><input class="form-control form-control-lg" type="email" id="questionInput" placeholder="Type what you want to imaginate..." /></div>
+        <div class="col-12 col-md-3"><button class="btn btn-primary btn-lg" type="submit" id="askButton">Imagine</button></div>
+    </div>
+</form>
+
+<!-- Add a loading icon -->
+<div id="loadingIcon" style="display: none;">
+    <img src="loading2.gif" alt="Loading" />
+</div>
+
+<script>
+    document.getElementById("askButton").addEventListener("click", function(event) {
+        event.preventDefault(); // Prevents the form from submitting
+
+        // Disable the submit button
+        document.getElementById("askButton").disabled = true;
+
+        // Get the input value
+        var questionInput = document.getElementById("questionInput").value;
+
+        // Encode the input value in Base64
+        var encodedQuestion = btoa(questionInput);
+
+        // Show the loading icon
+        var loadingIcon = document.getElementById("loadingIcon");
+        loadingIcon.style.display = "block";
+
+        // Create the request parameters
+        var params = {
+            key: "record_id",
+            message: encodedQuestion
+        };
+
+        // Make an asynchronous HTTP request
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://faas-blr1-8177d592.doserverless.co/api/v1/web/fn-3f654592-68ef-49a6-a44d-081ec4e1f4c5/default/imaginate", true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                // Request completed
+                loadingIcon.style.display = "none"; // Hide the loading icon
+
+                if (xhr.status === 200) {
+                    // Request successful
+                    console.log("Request completed:", xhr.responseText);
+
+                    // Encode the response in Base64
+                    var encodedResponse = btoa(xhr.responseText);
+
+                    // Redirect to response.html with the encoded response
+                    window.location.href = "/response.html?response=" + encodedResponse;
+                } else {
+                    // Request failed
+                    var error = "Error " + xhr.status + ": " + xhr.statusText;
+
+                    // Encode the error message in Base64
+                    var encodedError = btoa(error);
+
+                    // Redirect to response.html with the encoded error message
+                    window.location.href = "/response.html?error=" + encodedError;
+                }
+            }
+        };
+
+        // Send the request with the parameters
+        xhr.send(JSON.stringify(params));
+    });
+</script>
+
+</div>
+    </header>
+    <script src="/assets/bootstrap/js/bootstrap.min.js?h=79ff9637b74326c362fb6f7f5801a7ba"></script>
+    <script src="/assets/js/bs-init.js?h=ec5d4df3c798a2943b2ecbac76ebfde0"></script>
+    <script src="/assets/js/Bold-BS4-Jumbotron-with-Particles-js-particles-js.js?h=3dbacf5447e4dfdc27d100c3d6195a6d"></script>
+</body>
+
+</html>
