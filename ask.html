@@ -150,7 +150,7 @@ setTimeout(() => {
                     var encodedResponse = btoa(xhr.responseText);
 
                     // Redirect to response.html with the encoded response
-                    widow.location.href = "/response.html?response=" + encodedResponse;
+                    window.location.href = "/response.html?response=" + encodedResponse;
                 } else {
                     // Request failed
                     var error = "Error " + xhr.status + ": " + xhr.statusText;
@@ -159,7 +159,7 @@ setTimeout(() => {
                     var encodedError = btoa(error);
 
                     // Redirect to response.html with the encoded error message
-                    widow.location.href = "/response.html?error=" + Error;
+                    window.location.href = "/response.html?error=" + Error;
                 }
             }
         };
