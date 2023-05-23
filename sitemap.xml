@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
-        <loc>https://blu.schooltool.io/dashboard/ask.html</loc>
+        <loc>https://copilot.schooltool.io/dashboard/ask.html</loc>
     </url>
     <url>
-        <loc>https://blu.schooltool.io/dashboard/dashboard.html</loc>
+        <loc>https://copilot.schooltool.io/dashboard/dashboard.html</loc>
     </url>
     <url>
-        <loc>https://blu.schooltool.io/dashboard/img.html</loc>
+        <loc>https://copilot.schooltool.io/dashboard/img.html</loc>
     </url>
     <url>
-        <loc>https://blu.schooltool.io/dashboard/</loc>
+        <loc>https://copilot.schooltool.io/dashboard/</loc>
     </url>
     <url>
-        <loc>https://blu.schooltool.io/ask.html</loc>
+        <loc>https://copilot.schooltool.io/ask.html</loc>
     </url>
     <url>
-        <loc>https://blu.schooltool.io/</loc>
+        <loc>https://copilot.schooltool.io/</loc>
     </url>
     <url>
-        <loc>https://blu.schooltool.io/login.html</loc>
+        <loc>https://copilot.schooltool.io/login.html</loc>
     </url>
     <url>
-        <loc>https://blu.schooltool.io/register.html</loc>
+        <loc>https://copilot.schooltool.io/pricing.html</loc>
     </url>
     <url>
-        <loc>https://blu.schooltool.io/response.html</loc>
+        <loc>https://copilot.schooltool.io/register.html</loc>
+    </url>
+    <url>
+        <loc>https://copilot.schooltool.io/response.html</loc>
     </url>
 </urlset>
