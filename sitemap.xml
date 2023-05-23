@@ -13,7 +13,13 @@
         <loc>https://copilot.schooltool.io/dashboard/</loc>
     </url>
     <url>
+        <loc>https://copilot.schooltool.io/acc.html</loc>
+    </url>
+    <url>
         <loc>https://copilot.schooltool.io/ask.html</loc>
+    </url>
+    <url>
+        <loc>https://copilot.schooltool.io/download.html</loc>
     </url>
     <url>
         <loc>https://copilot.schooltool.io/</loc>
@@ -25,9 +31,9 @@
         <loc>https://copilot.schooltool.io/pricing.html</loc>
     </url>
     <url>
-        <loc>https://copilot.schooltool.io/register.html</loc>
+        <loc>https://copilot.schooltool.io/response.html</loc>
     </url>
     <url>
-        <loc>https://copilot.schooltool.io/response.html</loc>
+        <loc>https://copilot.schooltool.io/signup.html</loc>
     </url>
 </urlset>
