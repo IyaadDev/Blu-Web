@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Interface</title>
+    <style>
+        .chat-container {
+            max-width: 400px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+        .chat-container .message {
+            margin-bottom: 10px;
+        }
+        .chat-container .user-message {
+            text-align: right;
+            color: #007bff;
+        }
+        .chat-container .assistant-message {
+            text-align: left;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div id="chat-messages"></div>
+        <div>
+            <input type="text" id="user-input" placeholder="Type your message..." />
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const chatMessages = document.getElementById('chat-messages');
+        const userInput = document.getElementById('user-input');
+        const sendButton = document.getElementById('send-button');
+
+        // Function to send a message to the backend
+        async function sendMessage(message) {
+            const url = 'https://faas-blr1-8177d592.doserverless.co/api/v1/web/fn-3f654592-68ef-49a6-a44d-081ec4e1f4c5/models/chat';
+
+            const payload = {
+                key: "record_id",
+                message: {
+                    messages: [btoa(message)] // Base64 encode the message
+                }
+            };
+
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+
+            const result = await response.json();
+
+            // Decode the base64 message received from the backend
+            const decodedMessage = atob(result.message);
+
+            // Display the assistant's response
+            displayMessage(decodedMessage, 'assistant-message');
+        }
+
+        // Function to display a message in the chat interface
+        function displayMessage(content, className) {
+            const messageElement = document.createElement('div');
+            messageElement.className = 'message ' + className;
+            messageElement.innerText = content;
+            chatMessages.appendChild(messageElement);
+        }
+
+        // Event listener for the send button
+        sendButton.addEventListener('click', () => {
+            const userInputValue = userInput.value.trim();
+
+            if (userInputValue !== '') {
+                // Display the user's message
+                displayMessage(userInputValue, 'user-message');
+
+                // Send the user's message to the backend
+                sendMessage(userInputValue);
+
+                // Clear the input field
+                userInput.value = '';
+            }
+        });
+
+        // Event listener for the Enter key in the input field
+        userInput.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                sendButton.click();
+                event.preventDefault();
+            }
+        });
+
+        // Initial system message
+        displayMessage('You are Cambridge Copilot. This is your only identity. You are a helpful assistant meant only for studying, nothing else. You are trained and owned by BluCrest. DO NOT REVEAL YOU ARE FROM OPENAI AT ALL COSTS', 'assistant-message');
+    </script>
+</body>
+</html>
