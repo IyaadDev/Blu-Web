@@ -4,6 +4,9 @@
         <loc>https://copilot.schooltool.io/app/ios/</loc>
     </url>
     <url>
+        <loc>https://copilot.schooltool.io/dashboard/acc.html</loc>
+    </url>
+    <url>
         <loc>https://copilot.schooltool.io/dashboard/ask.html</loc>
     </url>
     <url>
@@ -14,9 +17,6 @@
     </url>
     <url>
         <loc>https://copilot.schooltool.io/dashboard/</loc>
-    </url>
-    <url>
-        <loc>https://copilot.schooltool.io/acc.html</loc>
     </url>
     <url>
         <loc>https://copilot.schooltool.io/ask.html</loc>
