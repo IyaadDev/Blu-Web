@@ -3,7 +3,12 @@ console.log("UserJS By iCorp Pvt has successfully booted");
 console.log("Now running...");
 
 // Globally initialize variables
-let username, tokens, key, password, email, name;
+let username = null;
+let tokens = null;
+let key = null;
+let password = null;
+let email = null;
+let name = null;
 
 // Function to get cookie value by name
 function getCookie(name) {
@@ -34,7 +39,7 @@ if (accountCookie) {
     email = accountData.email;
     name = accountData.name;
 
-      // Logging variables
+    // Logging variables
     console.log('Username:', username);
     console.log('Tokens:', tokens);
     console.log('Key:', key);
@@ -47,3 +52,11 @@ if (accountCookie) {
 } else {
   console.log('Not logged in');
 }
+
+// Now all the variables are accessible outside the if block
+console.log('Username outside if block:', username);
+console.log('Tokens outside if block:', tokens);
+console.log('Key outside if block:', key);
+console.log('Password outside if block:', password);
+console.log('Email outside if block:', email);
+console.log('Name outside if block:', name);
