@@ -28,7 +28,7 @@ function redirectIfCookieNotPresent() {
   // Check if the current page is within the app/ or account/ directory
   if (currentPage.startsWith("/app/") || currentPage.startsWith("/dashboard/")) {
     if (!checkCookie()) {
-      window.location.href = "login.html"; // Redirect to login.html
+      window.location.href = "https://copilot.schooltool.io/login.html"; // Redirect to login.html
     }
   }
 }
