@@ -1,4 +1,9 @@
 // UserJS By iCorp
+console.log("UserJS By iCorp Pvt has successfully booted");
+console.log("Now running...");
+
+// Globally initialize variables
+let username, tokens, key, password, email, name;
 
 // Function to get cookie value by name
 function getCookie(name) {
@@ -21,14 +26,15 @@ if (accountCookie) {
   try {
     accountData = JSON.parse(accountCookie);
 
-    // Extract specific values from the account data
-    const username = accountData.username;
-    const tokens = accountData.tokens;
-    const key = accountData.key;
-    const password = accountData.password;
-    const email = accountData.email;
-    const name = accountData.name;
+    // Assign values to the globally initialized variables
+    username = accountData.username;
+    tokens = accountData.tokens;
+    key = accountData.key;
+    password = accountData.password;
+    email = accountData.email;
+    name = accountData.name;
 
+      // Logging variables
     console.log('Username:', username);
     console.log('Tokens:', tokens);
     console.log('Key:', key);

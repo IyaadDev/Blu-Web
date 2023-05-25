@@ -30,3 +30,47 @@
   color: #ce4844;
 }
 
+.btn-1 {
+  color: white;
+  background-color: black;
+}
+
+.btn-1:hover {
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  color: white;
+}
+
+.btn-2 {
+  color: black;
+  background-color: white;
+}
+
+.btn-2:hover {
+  background: linear-gradient(45deg, #6effb0, #1a8cff);
+  color: black;
+  animation: transition1;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+
+.chat-container {
+  max-width: 100%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.chat-container .message {
+  margin-bottom: 10px;
+}
+
+.chat-container .user-message {
+  text-align: right;
+  color: #007bff;
+}
+
+.chat-container .assistant-message {
+  text-align: left;
+  color: #28a745;
+}
+

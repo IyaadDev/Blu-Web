@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
+        <loc>https://copilot.schooltool.io/app/ios/</loc>
+    </url>
+    <url>
         <loc>https://copilot.schooltool.io/dashboard/ask.html</loc>
     </url>
     <url>
-        <loc>https://copilot.schooltool.io/dashboard/dashboard.html</loc>
+        <loc>https://copilot.schooltool.io/dashboard/dash.html</loc>
     </url>
     <url>
         <loc>https://copilot.schooltool.io/dashboard/img.html</loc>
@@ -17,6 +20,9 @@
     </url>
     <url>
         <loc>https://copilot.schooltool.io/ask.html</loc>
+    </url>
+    <url>
+        <loc>https://copilot.schooltool.io/chat.html</loc>
     </url>
     <url>
         <loc>https://copilot.schooltool.io/download.html</loc>
