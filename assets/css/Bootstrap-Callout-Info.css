@@ -1,7 +1,7 @@
 .bs-callout {
   padding: 20px;
   margin: 20px 0;
-  border: 1px solid #eee;
+  /*border: 1px solid #bs-red;*/
   border-left-width: 5px;
   border-style: solid;
   border-radius: 3px;

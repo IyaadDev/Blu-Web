@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - Blu AI</title>
-    <link rel="canonical" href="https://copilot.schooltool.io/response.html">
-    <meta property="og:url" content="https://copilot.schooltool.io/response.html">
+    <title>Cambridge Copilot</title>
+    <link rel="canonical" href="https://copilot.schooltool.io/privacy.html">
+    <meta property="og:url" content="https://copilot.schooltool.io/privacy.html">
     <meta name="twitter:description" content="Your AI study assistant">
     <meta name="twitter:card" content="summary">
     <meta property="og:type" content="website">
@@ -21,7 +21,6 @@
     <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css?h=a5485e0ab00205da91ef331b68d4354e">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic&amp;display=swap">
-    <link rel="stylesheet" href="/assets/fonts/font-awesome.min.css?h=bb270fba1988038f5680f75b7475565e">
     <link rel="stylesheet" href="/assets/css/Bold-BS4-Responsive-Pricing-Table-Snippet.css?h=9f653af16624015a08748e962a56124e">
     <link rel="stylesheet" href="/assets/css/Bootstrap-Callout-Danger.css?h=f59b2825ea6994c6bb17d3c000b8f9a3">
     <link rel="stylesheet" href="/assets/css/Bootstrap-Callout-Info.css?h=c5fdea7bdd46ed28a4e5c51898eac3ed">
@@ -29,7 +28,7 @@
     <link rel="stylesheet" href="/assets/css/style.css?h=64ff3b41bbf3b0eecc9d06eae4e207d7">
 </head>
 
-<body style="background: #171717;color: rgb(255,255,255);">
+<body>
     <!-- Start: Navbar With Button -->
     <nav class="navbar navbar-light navbar-expand-md sticky-top py-3" style="background: #000000;text-decoration: none;">
         <div class="container"><a class="navbar-brand d-flex align-items-center" href="/index.html"><img src="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f" style="height: auto;width: 30px;background: linear-gradient(var(--bs-red), var(--bs-blue));border-radius: 6px;margin-right: 10px;" width="50" height="67"><span style="color: #ffffff;font-weight: bold;font-size: 17px;">Cambridge Copilot</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2" style="color: rgba(0, 0, 0, 0.55);background: #ffffff;"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
@@ -46,73 +45,6 @@
             </div>
         </div>
     </nav><!-- End: Navbar With Button -->
-    <header class="text-center text-white masthead" style="background: url('/assets/img/bg-masthead.jpg?h=ee9b21759e86acff127259186b5f0e4a')no-repeat center center;background-size: cover;">
-        <div class="container">
-            <div style="background: #7ad6ea;border-radius: 4px;">
-                <p class="text-center d-lg-flex justify-content-lg-center align-items-lg-center" style="margin-top: -75px;color: rgb(0,0,0);padding: 7px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-info-square-fill" style="font-size: 21px;">
-                        <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.93 4.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path>
-                    </svg>&nbsp; You are using a <strong>&nbsp;</strong>slow,&nbsp;<strong>trial </strong>&nbsp;version of Copilot, sign up for free to unlock unlimited requests!</p>
-            </div>
-        </div><img src="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f" width="270" height="381" style="height: auto;width: 150px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-lg-8 col-xl-7 mx-auto position-relative">
-                    <h1 style="margin: 15px;margin-top: 0px;">Copilot Says...</h1><div style="width: 100%;border-width: 8.4px;border-style: solid;border-radius: 8px;height: 100%;padding: 20px;">
-<p id="responder"></p>
-<script>
-    // Get the "response" parameter from the URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const encodedResponse = urlParams.get('response');
-
-    // Decode the response from Base64
-    const decodedResponse = atob(encodedResponse);
-
-    // Typing animation letter by letter
-    const responder = document.getElementById("responder");
-    let index = 0;
-
-    function typeWriter() {
-        if (index < decodedResponse.length) {
-            responder.innerHTML += decodedResponse.charAt(index);
-            index++;
-            setTimeout(typeWriter, 1); // Adjust the delay between letters (in milliseconds)
-        }
-    }
-
-    // Start the typing animation
-    typeWriter();
-</script>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    </header>
-    <footer class="bg-light footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 text-center text-lg-start my-auto h-100">
-                    <ul class="list-inline mb-2">
-                        <li class="list-inline-item"><a href="#">About</a></li>
-                        <li class="list-inline-item"><span>⋅</span></li>
-                        <li class="list-inline-item"><a href="#">Contact</a></li>
-                        <li class="list-inline-item"><span>⋅</span></li>
-                        <li class="list-inline-item"><a href="#">Terms of &nbsp;Use</a></li>
-                        <li class="list-inline-item"><span>⋅</span></li>
-                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
-                    </ul>
-                    <p class="text-muted small mb-4 mb-lg-0">© IyaadGPT - Cambridge Copilot 2023. All Rights Reserved.</p>
-                </div>
-                <div class="col-lg-6 text-center text-lg-end my-auto h-100">
-                    <ul class="list-inline mb-0">
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook fa-2x fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter fa-2x fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-instagram fa-2x fa-fw"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
     <script src="/assets/bootstrap/js/bootstrap.min.js?h=79ff9637b74326c362fb6f7f5801a7ba"></script>
     <script src="/assets/js/bs-init.js?h=67ee20cf4e5150919853fca3720bbf0d"></script>
     <script src="/assets/js/blocker.js?h=7a060079b90818ec581d1ac454eb2cb0"></script>
