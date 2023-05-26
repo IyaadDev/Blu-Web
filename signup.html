@@ -52,12 +52,7 @@
             <h4>Signups temporarily disabled</h4>
             <p>Blu is at capacity at the moment</p>
         </div><!-- End: Bootstrap Callout Danger -->
-    </div><script>
-    if (document.cookie.indexOf("account=") !== -1) {
-  window.location.href = "app/dashboard.html";
-}
-
-</script>
+    </div>
     <div class="container">
         <div class="card shadow-lg o-hidden border-0 my-5">
             <div class="card-body p-0">
@@ -69,140 +64,77 @@
                         <div class="p-5">
                             <div class="text-center">
                                 <h4 class="text-dark mb-4">Create an Account!</h4>
-                            </div>
-                            <form id="signup-form" class="user">
-                                <div class="row mb-3">
-                                    <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control form-control form-control form-control-user" type="text" id="exampleFirstName" placeholder="First Name" name="first-name" required=""></div>
-                                    <div class="col-sm-6"><input class="form-control form-control form-control form-control form-control-user" type="text" id="exampleLastName" placeholder="Last Name" name="last-name" required=""></div>
-                                </div>
-                                <div class="mb-3"><input class="form-control form-control form-control form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email Address" name="email" required="" inputmode="email"></div>
-                                <div class="mb-3"><input class="form-control form-control form-control form-control form-control-user" type="text" id="exampleUsername" placeholder="Username" name="username" required=""></div>
-                                <div class="row mb-3">
-                                    <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control form-control form-control form-control-user" type="password" id="examplePasswordInput" placeholder="Password" name="password" required=""></div>
-                                    <div class="col-sm-6"><input class="form-control form-control form-control form-control form-control-user" type="password" id="exampleRepeatPasswordInput" placeholder="Repeat Password" name="password_repeat" required=""></div>
-                                </div>
-                                <div class="form-check" style="margin: 15px;"><input class="form-check-input" type="checkbox" id="formCheck-1" required=""><label class="form-check-label" for="formCheck-1"><a href="privacy" target="_blank">Privacy Policy</a>I have read and agree to the&nbsp;</label></div>
-                                <div class="form-check" style="margin: 15px;"><input class="form-check-input" type="checkbox" id="formCheck-2" required=""><label class="form-check-label" for="formCheck-2">I<a href="tac" target="_blank">Terms and Conditions</a> have read and agree to the&nbsp;</label></div><button class="btn btn-primary d-block btn-user w-100" type="submit">Register Account</button>
-                                <hr><button class="btn btn-primary disabled d-block btn-google btn-user w-100 mb-2" role="button" disabled="" style="color: rgb(255,255,255);background: #007bff;"><i class="fab fa-google"></i> Login with Google (Not available yet)</button><a class="btn btn-primary disabled d-block btn-google btn-user w-100 mb-2" role="button" style="background: #0a0c10;color: rgb(255,255,255);"><i class="fab fa-github"></i> Login with GitHub (Not available yet)</a><button class="btn btn-primary disabled d-block btn-facebook btn-user w-100" role="button" disabled="" style="background: #007bff;color: rgb(255,255,255);"><i class="fab fa-facebook-f"></i> Login with Facebook (Not available yet)</button>
-                                <hr>
-                            </form><!-- Start: Script --><script>
-    let cardNo = generateCardNumber();
-console.log(cardNo);
-
-function generateCardNumber() {
-  let cardNumber = "";
-  for (let i = 0; i < 16; i++) {
-    if (i > 0 && i % 4 === 0) {
-      cardNumber += " "; // Add space after every 4 digits
-    }
-    cardNumber += Math.floor(Math.random() * 10); // Generate a random digit
-  }
-  return cardNumber;
-}
-
+                            </div><form id="signup-form" class="user">
+    <div class="row mb-3">
+        <div class="col-sm-6 mb-3 mb-sm-0"><input id="exampleFirstName" class="form-control form-control form-control form-control form-control-user" type="text" placeholder="First Name" name="first-name" required /></div>
+        <div class="col-sm-6"><input id="exampleLastName" class="form-control form-control form-control form-control form-control-user" type="text" placeholder="Last Name" name="last-name" required /></div>
+    </div>
+    <div class="mb-3"><input id="exampleInputEmail" class="form-control form-control form-control form-control form-control-user" type="email" aria-describedby="emailHelp" placeholder="Email Address" name="email" required inputmode="email" /></div>
+    <div class="mb-3"><input id="exampleUsername" class="form-control form-control form-control form-control form-control-user" type="text" placeholder="Username" name="username" required /></div>
+    <div class="row mb-3">
+        <div class="col-sm-6 mb-3 mb-sm-0"><input id="examplePasswordInput" class="form-control form-control form-control form-control form-control-user" type="password" placeholder="Password" name="password" required /></div>
+        <div class="col-sm-6"><input id="exampleRepeatPasswordInput" class="form-control form-control form-control form-control form-control-user" type="password" placeholder="Repeat Password" name="password_repeat" required /></div>
+    </div>
+    <div class="form-check" style="margin: 15px;"><input id="formCheck-1" class="form-check-input" type="checkbox" required /><label class="form-check-label" for="formCheck-1"><a href="privacy" target="_blank">Privacy Policy</a>I have read and agree to the </label></div>
+    <div class="form-check" style="margin: 15px;"><input id="formCheck-2" class="form-check-input" type="checkbox" required /><label class="form-check-label" for="formCheck-2">I<a href="tac" target="_blank">Terms and Conditions</a> have read and agree to the </label></div><button class="btn btn-primary d-block btn-user w-100" type="submit">Register Account</button>
+    <hr /><button class="btn btn-primary disabled d-block btn-google btn-user w-100 mb-2" role="button" style="color: rgb(255,255,255);background: #007bff;" disabled><i class="fab fa-google"></i> Login with Google (Not available yet)</button><a class="btn btn-primary disabled d-block btn-google btn-user w-100 mb-2" role="button" style="background: #0a0c10;color: rgb(255,255,255);" disabled><i class="fab fa-github"></i> Login with GitHub (Not available yet)</a><button class="btn btn-primary disabled d-block btn-facebook btn-user w-100" role="button" style="background: #007bff;color: rgb(255,255,255);" disabled><i class="fab fa-facebook-f"></i> Login with Facebook (Not available yet)</button>
+    <hr />
+</form><!-- Start: Script --><script>
   const form = document.getElementById("signup-form");
+  const registerButton = form.querySelector("button[type='submit']");
   const errorContainer = document.getElementById("error-container");
-  const warningContainer = document.getElementById("warning-container");
-
-  form.addEventListener("submit", (event) => {
+  
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
-    const data = new FormData(event.target);
-    const firstName = data.get("first-name");
-    const lastName = data.get("last-name");
-    const email = data.get("email");
-    const username = data.get("username");
-    const password = data.get("password");
-    const passwordRepeat = data.get("password_repeat");
-    // Replace this with the actual value of your cardNo variable
+    registerButton.disabled = true;
+
+    const firstName = document.getElementById("exampleFirstName").value;
+    const lastName = document.getElementById("exampleLastName").value;
+    const email = document.getElementById("exampleInputEmail").value;
+    const username = document.getElementById("exampleUsername").value;
+    const password = document.getElementById("examplePasswordInput").value;
+    const passwordRepeat = document.getElementById("exampleRepeatPasswordInput").value;
 
     if (password !== passwordRepeat) {
-      alert("Passwords do not match.");
+      errorContainer.textContent = "Passwords do not match.";
+      registerButton.disabled = false;
       return;
     }
 
-    // Check if username already exists
-    fetch(`https://api.airtable.com/v0/appj9R8cdDKBA2Khb/accounts?filterByFormula={username}="${username}"`, {
-      headers: {
-        Authorization: "Bearer patDs6HNgXDsAGKtn.b4b12d712365527fb18967b9d0a6002800857dc8309181510f6963ad2b45019d"
-      }
-    }).then((response) => {
-      if (response.ok) {
-        response.json().then((data) => {
-          if (data.records.length > 0) {
-            alert("An account with the same username already exists. Please choose a different username.");
-          } else {
-            // Create new account
-            const pin = Math.floor(1000 + Math.random() * 9000);
-            const balance = 25;
-              
-           fetch('https://cors-anywhere.herokuapp.com/https://hooks.airtable.com/workflows/v1/genericWebhook/appj9R8cdDKBA2Khb/wflLbFCKs9D8hnhWV/wtrm3SajmX1dwkNrE', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-    // Add your data here
-    "first-name": firstName,
-                  "last-name": lastName,
-                  "email": email,
-                  "username": username,
-                  "password": password,
-                  "card-number": cardNo,
-                  "pin": pin,
-                  "balance": balance
-  })
-})
-.then(response => response.json())
-.then(data => console.log(data))
-.catch(error => console.error(error));
- fetch("https://api.airtable.com/v0/appj9R8cdDKBA2Khb/accounts", {
-              method: "POST",
-              headers: {
-                Authorization: "Bearer patDs6HNgXDsAGKtn.b4b12d712365527fb18967b9d0a6002800857dc8309181510f6963ad2b45019d",
-                "Content-Type": "application/json"
-              },
-              body: JSON.stringify({
-                "fields": {
-                  "first-name": firstName,
-                  "last-name": lastName,
-                  "email": email,
-                  "username": username,
-                  "password": password,
-                  "card-number": cardNo,
-                  "pin": pin,
-                  "balance": balance
-                }
-              })
-            }).then((response) => {
-              if (response.ok) {
-                response.json().then((data) => {
-                  const account = data;
-                  const expires = "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
-                  document.cookie = `account=${JSON.stringify(account.fields)}${expires}; path=/`;
-                  alert("Sign up successful!");
-                  form.reset();
-                  window.location.href = "app/dashboard.html";
-                });
-              } else {
-                alert("An error occurred. Please try again later.");
-              }
-            }).catch((error) => {
-              console.error(error);
-              alert("An error occurred. Please try again later.");
-            });
-          }
-        });
-      } else {
-        alert("An error occurred. Please try again later.");
-      }
-    }).catch((error) => {
-    console.error(error);
-    alert("An error occurred. Please try again later.");
-  });
-});
-    
-    </script>
+    const name = `${firstName} ${lastName}`;
 
+    const data = {
+      name,
+      email,
+      username,
+      password
+    };
+
+    try {
+      const response = await fetch("https://faas-blr1-8177d592.doserverless.co/api/v1/web/fn-3f654592-68ef-49a6-a44d-081ec4e1f4c5/default/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        // Handle success response
+        console.log(result);
+      } else {
+        // Handle error response
+        console.log("An error occurred.");
+      }
+    } catch (error) {
+      // Handle network error
+      console.log("An error occurred.", error);
+    }
+
+    registerButton.disabled = false;
+  });
+</script>
 
 <!-- End: Script -->
                             <div class="text-center"><a class="small" href="/login.html">Already have an account? Login!</a></div>
