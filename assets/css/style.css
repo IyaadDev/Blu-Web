@@ -1,3 +1,9 @@
+.gradient-text-something {
+  background: linear-gradient(128deg, var(--bs-code-color) 0%, var(--bs-indigo) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .gradient-text-green {
   background: linear-gradient(45deg, #6effb0, #1a8cff);
   -webkit-background-clip: text;
@@ -213,5 +219,15 @@ section.pricing {
   .pricing .card:hover .btn {
     opacity: 1;
   }
+}
+
+.p-md {
+  font-size: 15px;
+  margin-left: 20px;
+}
+
+.h-md {
+  margin-left: 10px;
+  font-size: 30px;
 }
 
