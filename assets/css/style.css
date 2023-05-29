@@ -159,7 +159,7 @@ ul {
 section.pricing {
   background: #9CECFB;
   background: -webkit-linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
-  background: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
+  background: transparent;
 }
 
 .pricing .card {
