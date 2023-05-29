@@ -37,6 +37,9 @@
         <loc>https://copilot.schooltool.io/index-light.html</loc>
     </url>
     <url>
+        <loc>https://copilot.schooltool.io/index-logged-in.html</loc>
+    </url>
+    <url>
         <loc>https://copilot.schooltool.io/login.html</loc>
     </url>
     <url>

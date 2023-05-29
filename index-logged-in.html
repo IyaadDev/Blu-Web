@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Cambridge Copilot</title>
     <meta name="theme-color" content="#000000">
-    <link rel="canonical" href="https://copilot.schooltool.io/">
-    <meta property="og:url" content="https://copilot.schooltool.io/">
+    <link rel="canonical" href="https://copilot.schooltool.io/index-logged-in.html">
+    <meta property="og:url" content="https://copilot.schooltool.io/index-logged-in.html">
     <meta name="twitter:description" content="Unleash your genius with AI. Cambridge Copilot empowers students worldwide with AI and allows them to reach their potential. Try Copilot out today!">
     <meta property="og:description" content="Unleash your genius with AI. Cambridge Copilot empowers students worldwide with AI and allows them to reach their potential. Try Copilot out today!">
     <meta name="twitter:card" content="summary">
@@ -37,7 +37,19 @@
                     <li class="nav-item"><a class="nav-link" href="../pricing.html" style="color: #ffffff;">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link" href="../download.html" style="color: #ffffff;">Download</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" style="color: #ffffff;">About</a></li>
-                </ul><a class="btn btn-primary" role="button" style="margin-right: 8px;" href="/signup.html">Sign up</a><a class="btn btn-primary" role="button" href="/login.html">Login</a>
+                </ul>
+                <div><img class="rounded-circle img-fluid" id="profile-pic" style="width: auto;height: 49px;" width="auto" height="49" />
+
+<script src="user.js"></script>
+<script>
+  // Assuming the pfp variable is defined in script.js
+  // Set the src attribute after the script.js file has loaded
+  window.addEventListener("DOMContentLoaded", function() {
+    var imageElement = document.getElementById("profile-pic");
+    imageElement.src = pfp;
+  });
+</script>
+</div>
             </div>
         </div>
     </nav><!-- End: Navbar With Button -->
@@ -50,10 +62,7 @@
                 </div>
                 <div class="container">
                     <div class="row d-flex d-lg-flex justify-content-center justify-content-lg-center" style="margin-top: 20px;">
-                        <div class="col-md-7 col-lg-4"><a class="btn btn-primary" role="button" style="height: 45px;width: auto;font-size: 17.5px;" href="/ask.html">Try Copilot Out</a>
-                            <p class="text-muted" style="font-size: 12.5px;">No sign up required</p>
-                        </div>
-                        <div class="col-md-6 col-lg-3"><a class="btn btn-primary" role="button" style="height: 45px;width: auto;font-size: 17.5px;" href="/signup.html">Sign up</a></div>
+                        <div class="col-md-6 col-lg-5"><a class="btn btn-primary" role="button" style="height: 45px;width: auto;font-size: 17.5px;" href="/dashboard/dash.html">Open Dashboard</a></div>
                     </div>
                 </div>
             </div>
@@ -134,11 +143,7 @@
                 </div>
             </div>
         </div>
-    </div><!-- End: Testimonials --><h1 style="font-weight: bold;font-size: 9vw;margin-top: 2vw;width: 100vw;">Study <span class="gradient-text-landing">smarter</span><br>not <span class="gradient-text-green">harder</span></h1><a class="btn btn-primary text-center" role="button" href="/signup.html" style="margin-bottom: 250px;">Sign up now</a><script>
-    if (document.cookie.indexOf("account") >= 0) {
-window.location.href = "/index-logged-in.html";
-}
-    </script>
+    </div><!-- End: Testimonials --><h1 style="font-weight: bold;font-size: 9vw;margin-top: 2vw;width: 100vw;">Study <span class="gradient-text-landing">smarter</span><br>not <span class="gradient-text-green">harder</span></h1><a class="btn btn-primary text-center" role="button" href="/dashboard/dash.html" style="margin-bottom: 250px;">Open Dashboars</a>
     <script src="/assets/bootstrap/js/bootstrap.min.js?h=79ff9637b74326c362fb6f7f5801a7ba"></script>
     <script src="/assets/js/bs-init.js?h=67ee20cf4e5150919853fca3720bbf0d"></script>
     <script src="/assets/js/blocker.js?h=6f7e0f8639ed61783b096dc5e5de43b2"></script>

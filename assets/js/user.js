@@ -9,6 +9,7 @@ let key = null;
 let password = null;
 let email = null;
 let name = null;
+let pfp = null;
 
 // Function to get cookie value by name
 function getCookie(name) {
@@ -38,6 +39,7 @@ if (accountCookie) {
     password = accountData.password;
     email = accountData.email;
     name = accountData.name;
+    pfp = accountData.pfp;
 
     // Logging variables
     console.log('Username:', username);
@@ -46,6 +48,7 @@ if (accountCookie) {
     console.log('Password:', password);
     console.log('Email:', email);
     console.log('Name:', name);
+      console.log('PFP:', pfp);
   } catch (error) {
     console.error('Error parsing account cookie:', error);
   }
@@ -60,3 +63,4 @@ console.log('Key outside if block:', key);
 console.log('Password outside if block:', password);
 console.log('Email outside if block:', email);
 console.log('Name outside if block:', name);
+console.log('PFP outside if block:', pfp);
