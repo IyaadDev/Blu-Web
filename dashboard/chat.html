@@ -25,7 +25,8 @@
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css?h=a5485e0ab00205da91ef331b68d4354e">
     <link rel="manifest" href="/manifest.json?h=d5bd2e24ee18035bf0c24f8a353d9508">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic&amp;display=swap">
-    <link rel="stylesheet" href="/assets/css/style.css?h=24e810773471c604b38dffbea9443035">
+    <link rel="stylesheet" href="/assets/fonts/font-awesome.min.css?h=bb270fba1988038f5680f75b7475565e">
+    <link rel="stylesheet" href="/assets/css/style.css?h=dde5dbf2b9945a8039ca7cfdca4271bc">
 </head>
 
 <body class="text-center" style="background: #0F2027;/*background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);*/background: linear-gradient(to right, #2C5364, #203A43, #0F2027);">
@@ -37,7 +38,7 @@
                     <li class="nav-item"><a class="nav-link" href="pricing.html" style="color: #ffffff;">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link" href="download.html" style="color: #ffffff;">Download</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" style="color: #ffffff;">About</a></li>
-                </ul><a class="btn btn-primary" role="button" style="margin-right: 8px;" href="signup.html">Sign up</a><a class="btn btn-primary" role="button" href="login.html">Login</a>
+                </ul><div><a class="btn btn-primary" role="button" style="margin-right: 8px;" href="/signup.html">Sign up</a><a class="btn btn-primary" role="button" href="/login.html">Login</a></div>
             </div>
         </div>
     </nav><!-- End: Navbar With Button -->
@@ -49,8 +50,8 @@
         <div class="text-center d-lg-flex justify-content-lg-center" style="width: 100%;margin: 15px;">
             <!-- Start: Msg -->
             <div class="row" style="position: fixed;bottom: 0;margin-bottom: 10px;width: 75vw;">
-                <div class="col-md-10 col-xxl-8" style="width: 80%;"><input class="form-control-lg form-control" type="text" id="user-input" placeholder="Type a message..." style="width: 100%;padding-top: 4px;border-radius: 10000000000000000px;height: 100%;"></div>
-                <div class="col-md-1 col-lg-1 col-xxl-3 d-md-flex justify-content-md-start" style="width: 20%;"><button class="btn btn-primary btn-lg" type="submit" id="send-button" style="float: right;padding-top: 4px;width: 100%;height: 100%;font-size: 2vw;">Ask</button></div>
+                <div class="col-md-10 col-xxl-8 d-lg-flex justify-content-lg-center" style="width: 80%;"><input class="form-control-lg form-control" type="text" id="user-input" placeholder="Type a message..." style="width: 100%;padding-top: 4px;border-radius: 10000000000000000px;height: 100%;"></div>
+                <div class="col-sm-2 col-md-1 col-lg-1 col-xxl-3 text-center d-md-flex justify-content-md-start justify-content-lg-center" style="width: 20%;"><button class="btn btn-primary btn-lg text-center d-lg-flex justify-content-lg-center align-items-lg-center" type="submit" id="send-button" style="float: right;padding: 0px;width: 5rem;height: auto;font-size: 2vw;"><i class="fa fa-send" style="font-size: 2.75vw;margin: 5px;"></i></button></div>
             </div><!-- End: Msg -->
         </div><!-- Start: JavaScript --><script>
         const chatMessages = document.getElementById('chat-messages');

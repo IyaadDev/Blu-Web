@@ -150,8 +150,10 @@ ul {
 }
 
 .chat-container {
-  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
+  height: 550px;
+  overflow-y: scroll;
   /*border: 1px solid #ccc;*/
   padding: 20px;
 }
