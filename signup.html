@@ -26,7 +26,7 @@
     <link rel="manifest" href="/manifest.json?h=d5bd2e24ee18035bf0c24f8a353d9508">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic&amp;display=swap">
     <link rel="stylesheet" href="/assets/fonts/fontawesome-all.min.css?h=bb270fba1988038f5680f75b7475565e">
-    <link rel="stylesheet" href="/assets/css/style.css?h=09b1d3e24409bf6b6d2e2c5ac332e3fb">
+    <link rel="stylesheet" href="/assets/css/style.css?h=24e810773471c604b38dffbea9443035">
 </head>
 
 <body style="background: rgb(0,0,0);color: rgb(255,255,255);">
@@ -35,20 +35,13 @@
         <div class="container"><a class="navbar-brand d-flex align-items-center" href="../index.html"><img src="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f" style="height: auto;width: 30px;background: linear-gradient(var(--bs-red), var(--bs-blue));border-radius: 6px;margin-right: 10px;" width="50" height="67"><span style="color: #ffffff;font-weight: bold;font-size: 17px;">Cambridge Copilot</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2" style="color: rgba(0, 0, 0, 0.55);background: #ffffff;"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-2">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" href="../pricing.html" style="color: #ffffff;">Pricing</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../download.html" style="color: #ffffff;">Download</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/pricing.html" style="color: #ffffff;">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/download.html" style="color: #ffffff;">Download</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" style="color: #ffffff;">About</a></li>
                 </ul><a class="btn btn-primary" role="button" style="margin-right: 8px;" href="/signup.html">Sign up</a><a class="btn btn-primary" role="button" href="/login.html">Login</a>
             </div>
         </div>
     </nav><!-- End: Navbar With Button -->
-    <div class="container">
-        <!-- Start: Bootstrap Callout Danger -->
-        <div class="bs-callout bs-callout-danger" style="margin-top: 40px;">
-            <h4>Signups temporarily disabled</h4>
-            <p>Blu is at capacity at the moment</p>
-        </div><!-- End: Bootstrap Callout Danger -->
-    </div>
     <div class="container">
         <div class="card shadow-lg o-hidden border-0 my-5">
             <div class="card-body p-0">
@@ -60,26 +53,62 @@
                         <div class="p-5">
                             <div class="text-center">
                                 <h4 class="text-dark mb-4">Create an Account!</h4>
-                            </div><form id="signup-form" class="user">
-    <div class="row mb-3">
-        <div class="col-sm-6 mb-3 mb-sm-0"><input id="exampleFirstName" class="form-control form-control form-control form-control form-control-user" type="text" placeholder="First Name" name="first-name" required /></div>
-        <div class="col-sm-6"><input id="exampleLastName" class="form-control form-control form-control form-control form-control-user" type="text" placeholder="Last Name" name="last-name" required /></div>
+                            </div><!-- Start: Script --><form id="signup-form" class="user">
+  <div class="row mb-3">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+      <input id="exampleFirstName" class="form-control form-control-user" type="text" placeholder="First Name" name="first-name" required />
     </div>
-    <div class="mb-3"><input id="exampleInputEmail" class="form-control form-control form-control form-control form-control-user" type="email" aria-describedby="emailHelp" placeholder="Email Address" name="email" required inputmode="email" /></div>
-    <div class="mb-3"><input id="exampleUsername" class="form-control form-control form-control form-control form-control-user" type="text" placeholder="Username" name="username" required /></div>
-    <div class="row mb-3">
-        <div class="col-sm-6 mb-3 mb-sm-0"><input id="examplePasswordInput" class="form-control form-control form-control form-control form-control-user" type="password" placeholder="Password" name="password" required /></div>
-        <div class="col-sm-6"><input id="exampleRepeatPasswordInput" class="form-control form-control form-control form-control form-control-user" type="password" placeholder="Repeat Password" name="password_repeat" required /></div>
+    <div class="col-sm-6">
+      <input id="exampleLastName" class="form-control form-control-user" type="text" placeholder="Last Name" name="last-name" required />
     </div>
-    <div class="form-check" style="margin: 15px;"><input id="formCheck-1" class="form-check-input" type="checkbox" required /><label class="form-check-label" for="formCheck-1"><a href="privacy" target="_blank">Privacy Policy</a>I have read and agree to the </label></div>
-    <div class="form-check" style="margin: 15px;"><input id="formCheck-2" class="form-check-input" type="checkbox" required /><label class="form-check-label" for="formCheck-2">I<a href="tac" target="_blank">Terms and Conditions</a> have read and agree to the </label></div><button class="btn btn-primary d-block btn-user w-100" type="submit">Register Account</button>
-    <hr /><button class="btn btn-primary disabled d-block btn-google btn-user w-100 mb-2" role="button" style="color: rgb(255,255,255);background: #007bff;" disabled><i class="fab fa-google"></i> Login with Google (Not available yet)</button><a class="btn btn-primary disabled d-block btn-google btn-user w-100 mb-2" role="button" style="background: #0a0c10;color: rgb(255,255,255);" disabled><i class="fab fa-github"></i> Login with GitHub (Not available yet)</a><button class="btn btn-primary disabled d-block btn-facebook btn-user w-100" role="button" style="background: #007bff;color: rgb(255,255,255);" disabled><i class="fab fa-facebook-f"></i> Login with Facebook (Not available yet)</button>
-    <hr />
-</form><!-- Start: Script --><script>
+  </div>
+  <div class="mb-3">
+    <input id="exampleInputEmail" class="form-control form-control-user" type="email" aria-describedby="emailHelp" placeholder="Email Address" name="email" required inputmode="email" />
+  </div>
+  <div class="mb-3">
+    <input id="exampleUsername" class="form-control form-control-user" type="text" placeholder="Username" name="username" required />
+  </div>
+  <div class="row mb-3">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+      <input id="examplePasswordInput" class="form-control form-control-user" type="password" placeholder="Password" name="password" required />
+    </div>
+    <div class="col-sm-6">
+      <input id="exampleRepeatPasswordInput" class="form-control form-control-user" type="password" placeholder="Repeat Password" name="password_repeat" required />
+    </div>
+  </div>
+  <div class="form-check" style="margin: 15px;">
+    <input id="formCheck-1" class="form-check-input" type="checkbox" required />
+    <label class="form-check-label" for="formCheck-1">
+      <a href="privacy" target="_blank">Privacy Policy</a>I have read and agree to the&nbsp;
+    </label>
+  </div>
+  <div class="form-check" style="margin: 15px;">
+    <input id="formCheck-2" class="form-check-input" type="checkbox" required />
+    <label class="form-check-label" for="formCheck-2">I
+      <a href="tac" target="_blank">Terms and Conditions</a> have read and agree to the&nbsp;
+    </label>
+  </div>
+  <button class="btn btn-primary d-block btn-user w-100" type="submit">Register Account</button>
+  <hr />
+  <button class="btn btn-primary disabled d-block btn-google btn-user w-100 mb-2" role="button" style="color: rgb(255,255,255);background: #007bff;" disabled>
+    <i class="fab fa-google"></i> Login with Google (Not available yet)
+  </button>
+  <a class="btn btn-primary disabled d-block btn-google btn-user w-100 mb-2" role="button" style="background: #0a0c10;color: rgb(255,255,255);" disabled>
+    <i class="fab fa-github"></i> Login with GitHub (Not available yet)
+  </a>
+  <button class="btn btn-primary disabled d-block btn-facebook btn-user w-100" role="button" style="background: #007bff;color: rgb(255,255,255);" disabled>
+    <i class="fab fa-facebook-f"></i> Login with Facebook (Not available yet)
+  </button>
+  <hr />
+</form>
+
+<p id="error-container" style="color: red;"></p>
+
+<script>
   const form = document.getElementById("signup-form");
   const registerButton = form.querySelector("button[type='submit']");
   const errorContainer = document.getElementById("error-container");
-  
+
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     registerButton.disabled = true;
@@ -117,8 +146,16 @@
 
       if (response.ok) {
         const result = await response.json();
-        // Handle success response
-        console.log(result);
+        if (result.success === "false") {
+          errorContainer.textContent = result.error;
+          errorContainer.style.display = "block";
+        } else if (result.success === "true") {
+          // Save account JSON to a cookie called "account"
+          document.cookie = `account=${JSON.stringify(result.account)}`;
+
+          // Redirect to the dashboard page
+          window.location.href = "/dashboard/dash.html";
+        }
       } else {
         // Handle error response
         console.log("An error occurred.");
@@ -131,6 +168,7 @@
     registerButton.disabled = false;
   });
 </script>
+
 
 <!-- End: Script -->
                             <div class="text-center"><a class="small" href="/login.html">Already have an account? Login!</a></div>
