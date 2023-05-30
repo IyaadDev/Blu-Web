@@ -62,35 +62,38 @@
         let messages = []; // Array to store all messages
 
         // Function to send a message to the backend
-        async function sendMessage(message) {
-            const url = 'https://faas-blr1-8177d592.doserverless.co/api/v1/web/fn-3f654592-68ef-49a6-a44d-081ec4e1f4c5/models/chat';
+async function sendMessage(message) {
+    const url = 'https://faas-blr1-8177d592.doserverless.co/api/v1/web/fn-3f654592-68ef-49a6-a44d-081ec4e1f4c5/models/chat';
 
-            const payload = {
-                key: key,
-                message: {
-                    messages: messages.concat({ role: "user", content: message })
-                }
-            };
-
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(payload)
-            });
-
-            const result = await response.json();
-
-            // Extract the assistant's message from the response
-            const assistantMessage = result.message;
-
-            // Display the assistant's response
-            displayMessage(assistantMessage, 'assistant-message');
-
-            // Add the assistant's message to the messages array
-            messages.push({ role: "assistant", content: assistantMessage });
+    const payload = {
+        key: key,
+        message: {
+            messages: messages.concat({ role: "user", content: message })
         }
+    };
+
+    const base64Payload = btoa(JSON.stringify(payload)); // Encode payload as base64
+
+    const encodedUrl = `${url}?payload=${encodeURIComponent(base64Payload)}`; // Append encoded payload to the URL
+
+    const response = await fetch(encodedUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+
+    const result = await response.json();
+
+    // Extract the assistant's message from the response
+    const assistantMessage = result.message;
+
+    // Display the assistant's response
+    displayMessage(assistantMessage, 'assistant-message');
+
+    // Add the assistant's message to the messages array
+    messages.push({ role: "assistant", content: assistantMessage });
+}
 
         // Function to display a message in the chat interface
         function displayMessage(content, className) {
