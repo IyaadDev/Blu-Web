@@ -25,7 +25,8 @@
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css?h=a5485e0ab00205da91ef331b68d4354e">
     <link rel="manifest" href="/manifest.json?h=d5bd2e24ee18035bf0c24f8a353d9508">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic&amp;display=swap">
-    <link rel="stylesheet" href="/assets/css/style.css?h=dde5dbf2b9945a8039ca7cfdca4271bc">
+    <link rel="stylesheet" href="/assets/css/Navbar-With-Button-icons.css?h=befd8a398792e305b7ffd4a176b5b585">
+    <link rel="stylesheet" href="/assets/css/style.css?h=64fbcde49b216958ba1e4c01ed60586a">
 </head>
 
 <body class="text-center" style="background: rgb(0,0,0);color: rgb(255,255,255);height: 100%;">
@@ -38,17 +39,28 @@
                     <li class="nav-item"><a class="nav-link" href="../download.html" style="color: #ffffff;">Download</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" style="color: #ffffff;">About</a></li>
                 </ul>
-                <div><img class="rounded-circle img-fluid" id="profile-pic" style="width: auto;height: 49px;" width="auto" height="49" />
+                <div class="text-center d-md-flex justify-content-md-center align-items-md-center" style="width: 200px;height: 100%;">
+                    <h1 class="day-message" style="color: rgb(255,255,255);padding-top: 0px;font-size: 17.5px;">Connecting...</h1><!-- Start: Greet --><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>$(document).ready(function() {
+  function dateTime() {
+    var ndate = new Date();
+    var hours = ndate.getHours();
+    var message = hours < 12 ? 'Good Morning' : hours < 18 ? 'Good Afternoon' : 'Good Evening';
+    var final_message = "Hello, " + username;
+    $("h1.day-message").text(final_message);
+      console.log(final_message);
 
-<script src="assets/js/user.js"></script>
-<script>
-  // Assuming the pfp variable is defined in script.js
-  // Set the src attribute after the script.js file has loaded
-  window.addEventListener("DOMContentLoaded", function() {
-    var imageElement = document.getElementById("profile-pic");
-    imageElement.src = pfp;
-  });
-</script></div>
+    $('.date').html(hours.leadingZeroes(2) + ":" + ndate.getMinutes().leadingZeroes(2) + ":" + ndate.getSeconds().leadingZeroes(2) + (hours < 12 ? 'AM' : 'PM'));
+  }
+
+  setInterval(dateTime, 1000);
+});
+
+Number.prototype.leadingZeroes = function(len) {
+  return (new Array(len).fill('0', 0).join('') + this).slice(-Math.abs(len));
+}
+</script>
+                </div>
             </div>
         </div>
     </nav><!-- End: Navbar With Button -->

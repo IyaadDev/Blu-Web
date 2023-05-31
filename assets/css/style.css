@@ -262,3 +262,20 @@ section.pricing {
   margin: 10px;
 }
 
+.one {
+  margin-left: 15px;
+}
+
+.two {
+  margin-left: 35px;
+}
+
+.three {
+  margin-left: 40px;
+}
+
+body {
+  background-color: black!important;
+  color: white!important;
+}
+

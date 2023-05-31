@@ -27,7 +27,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic&amp;display=swap">
     <link rel="stylesheet" href="/assets/fonts/font-awesome.min.css?h=bb270fba1988038f5680f75b7475565e">
     <link rel="stylesheet" href="/assets/css/animate.min.css?h=5512c3e92e3931978c9ddcc7dbeed22b">
-    <link rel="stylesheet" href="/assets/css/style.css?h=dde5dbf2b9945a8039ca7cfdca4271bc">
+    <link rel="stylesheet" href="/assets/css/Navbar-With-Button-icons.css?h=befd8a398792e305b7ffd4a176b5b585">
+    <link rel="stylesheet" href="/assets/css/style.css?h=64fbcde49b216958ba1e4c01ed60586a">
 </head>
 
 <body style="background: #171717;color: rgb(255,255,255);">
@@ -319,6 +320,84 @@ setTimeout(() => {
             </div>
         </div>
     </footer>
+    <div class="d-none d-md-block" style="margin-right: 74px;">
+        <div style="width: 100%;height: 38px;">
+            <!-- Start: Acc -->
+            <div style="width: 250px;">
+                <!-- Start: 1 Row 3 Columns -->
+                <div class="container">
+                    <div class="row" style="width: 338px;">
+                        <div class="col-md-4 col-xl-1"><style>
+    /* CSS animation for image rotation */
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Style for the reload image */
+    #reload-img {
+        margin-bottom: -5px;
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+    }
+  </style>
+<div>
+    <img id="reload-img" src="/assets/img/reload.webp?h=08d0a3a7a4471b546b82aad6896fc9f7" alt="Refresh" height="25px" width="25px"/>
+  </div>
+
+  <script>
+    // Function to reload the page
+    function reloadPage() {
+      location.reload();
+    }
+
+    // Add click event listener to the reload image
+    var reloadImg = document.getElementById("reload-img");
+    reloadImg.addEventListener("click", function() {
+      // Start the rotation animation
+      reloadImg.style.animation = "rotate 1s linear infinite";
+      // Disable pointer events on the image to prevent multiple clicks
+      reloadImg.style.pointerEvents = "none";
+      // Call reloadPage function after a delay to allow the rotation animation to play
+      setTimeout(reloadPage, 1000);
+    });
+  </script></div>
+                        <div class="col-md-4 col-xl-4 text-start d-xl-flex justify-content-xl-center align-items-xl-center">
+                            <p class="day-message" style="color: rgb(255,255,255);padding: 0px;padding-top: 0px;margin: 0px;width: 150px;">Connecting...</p><!-- Start: Greet -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+    function fetchTokens(key) {
+      $.getJSON(`https://faas-blr1-8177d592.doserverless.co/api/v1/web/fn-3f654592-68ef-49a6-a44d-081ec4e1f4c5/default/fetchrow?key=${key}`, function(data) {
+        var tokens = data.fields.tokens;
+        var final_message = tokens + " Tokens";
+        var approximation = tokens * 1350;
+        console.log(approximation);
+        $("p.day-message").text(final_message);
+      });
+    }
+
+    // Replace 'your_key_variable' with the actual key variable from your external source
+    fetchTokens(key);
+
+    setInterval(function() {
+      fetchTokens(key);
+    }, 3600000); // Fetch tokens every hour (3600000 milliseconds)
+  });
+</script>
+
+                        </div>
+                        <div class="col-md-4 col-xl-2"><img src="/assets/img/coin.webp?h=7efc62dffe642c77ec7f9e9b9c07598e" style="width: 50px;height: 50px;margin: 15px;margin-left: 0px;"></div>
+                    </div>
+                </div><!-- End: 1 Row 3 Columns -->
+            </div><!-- End: Acc -->
+        </div>
+    </div>
     <script src="/assets/bootstrap/js/bootstrap.min.js?h=79ff9637b74326c362fb6f7f5801a7ba"></script>
     <script src="/assets/js/bs-init.js?h=67ee20cf4e5150919853fca3720bbf0d"></script>
     <script src="/assets/js/blocker.js?h=6f7e0f8639ed61783b096dc5e5de43b2"></script>
