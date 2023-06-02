@@ -13,10 +13,16 @@
         <loc>https://copilot.schooltool.io/dashboard/chat.html</loc>
     </url>
     <url>
+        <loc>https://copilot.schooltool.io/dashboard/chat-1.html</loc>
+    </url>
+    <url>
         <loc>https://copilot.schooltool.io/dashboard/dash.html</loc>
     </url>
     <url>
         <loc>https://copilot.schooltool.io/dashboard/dashboard.html</loc>
+    </url>
+    <url>
+        <loc>https://copilot.schooltool.io/dashboard/imaginator.html</loc>
     </url>
     <url>
         <loc>https://copilot.schooltool.io/dashboard/img.html</loc>

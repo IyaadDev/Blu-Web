@@ -55,3 +55,9 @@
   border-radius: 50%;
 }
 
+.emailWriterBackground {
+  background: #cc2b5e;
+  background: -webkit-linear-gradient(to right, #753a88, #cc2b5e);
+  background: linear-gradient(to right, #753a88, #cc2b5e);
+}
+
