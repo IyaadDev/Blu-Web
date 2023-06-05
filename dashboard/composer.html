@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Chat - Cambridge Copilot</title>
     <meta name="theme-color" content="#000000">
-    <link rel="canonical" href="https://copilot.schooltool.io/dashboard/chat.html">
-    <meta property="og:url" content="https://copilot.schooltool.io/dashboard/chat.html">
+    <link rel="canonical" href="https://copilot.schooltool.io/dashboard/composer.html">
+    <meta property="og:url" content="https://copilot.schooltool.io/dashboard/composer.html">
     <meta name="twitter:description" content="Unleash your genius with AI. Cambridge Copilot empowers students worldwide with AI and allows them to reach their potential. Try Copilot out today!">
     <meta property="og:description" content="Unleash your genius with AI. Cambridge Copilot empowers students worldwide with AI and allows them to reach their potential. Try Copilot out today!">
     <meta name="twitter:card" content="summary">
@@ -25,12 +25,11 @@
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css?h=a5485e0ab00205da91ef331b68d4354e">
     <link rel="manifest" href="/manifest.json?h=d5bd2e24ee18035bf0c24f8a353d9508">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic&amp;display=swap">
-    <link rel="stylesheet" href="/assets/fonts/font-awesome.min.css?h=bb270fba1988038f5680f75b7475565e">
     <link rel="stylesheet" href="/assets/css/Navbar-With-Button-icons.css?h=f623adac18ef3de74c101767316d66e2">
     <link rel="stylesheet" href="/assets/css/style.css?h=64fbcde49b216958ba1e4c01ed60586a">
 </head>
 
-<body class="text-center" style="background: #0F2027;/*background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);*/background: linear-gradient(to right, #2C5364, #203A43, #0F2027);">
+<body class="text-center emailWriterBackground">
     <!-- Start: Navbar With Button -->
     <nav class="navbar navbar-light navbar-expand-lg sticky-top py-3" style="background: var(--bs-navbar-hover-color);padding: 0px;">
         <div class="container"><a class="navbar-brand d-flex align-items-center" href="/dashboard/index.html"><img src="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f" style="height: auto;width: 30px;background: linear-gradient(var(--bs-red), var(--bs-blue));border-radius: 6px;margin-right: 10px;" width="50" height="67"><span style="color: #ffffff;font-weight: bold;">Copilot</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1" style="color: var(--bs-white);background: #ffffff;"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
@@ -122,101 +121,18 @@
             </div>
         </div>
     </nav><!-- End: Navbar With Button -->
-    <div class="container">
-        <div class="chat-container" style="padding: 0px;">
-            <div class="container" style="height: auto;min-height: 250px;padding: 0px;margin-bottom: -170px;max-height: 250px;"><div class="container" id="chat-messages"></div></div>
-            <div></div>
+    <h1 style="margin-top: 24px;">Email Writer</h1><!-- Start: Global --><!-- End: Global -->
+    <div class="container text-center d-md-flex justify-content-md-center align-items-md-center" style="padding: 10px;">
+        <div class="text-start" style="width: 75%;">
+            <h3 class="text-start">Type</h3><select class="form-select-lg" style="background: #1488CC;background: #a2b7ea;color: #000000;">
+                <optgroup label="What do you want to write today?">
+                    <option value="12">Email</option>
+                    <option value="13">Paragraph</option>
+                    <option value="14">Ideas</option>
+                </optgroup>
+            </select>
         </div>
-        <div class="text-center d-lg-flex justify-content-lg-center" style="width: 100%;margin: 15px;">
-            <!-- Start: Msg -->
-            <div class="row" style="position: fixed;bottom: 0;margin-bottom: 10px;width: 75vw;">
-                <div class="col-md-10 col-xxl-8 d-lg-flex justify-content-lg-center" style="width: 80%;"><input class="form-control-lg form-control" type="text" id="user-input" placeholder="Type a message..." style="width: 100%;padding-top: 4px;border-radius: 10000000000000000px;height: 100%;" autofocus="" required="" minlength="1" maxlength="500"></div>
-                <div class="col-sm-2 col-md-1 col-lg-1 col-xxl-3 text-center d-md-flex justify-content-md-start justify-content-lg-center" style="width: 20%;"><button class="btn btn-primary btn-lg text-center d-lg-flex justify-content-lg-center align-items-lg-center" type="submit" id="send-button" style="float: right;padding: 0px;width: 5rem;height: auto;font-size: 2vw;"><i class="fa fa-send" style="font-size: 2.75vw;margin: 5px;"></i></button></div>
-            </div><!-- End: Msg -->
-        </div><!-- Start: JavaScript --><script>
-        const chatMessages = document.getElementById('chat-messages');
-        const userInput = document.getElementById('user-input');
-        const sendButton = document.getElementById('send-button');
-
-        let messageOrder = 1; // Counter to keep track of message order
-        let messages = []; // Array to store all messages
-
-        // Function to send a message to the backend
-async function sendMessage(message) {
-    const url = 'https://faas-blr1-8177d592.doserverless.co/api/v1/web/fn-3f654592-68ef-49a6-a44d-081ec4e1f4c5/models/chat';
-
-    const payload = {
-        key: key,
-        message: {
-            messages: messages.concat({ role: "user", content: message })
-        }
-    };
-
-    const base64Payload = btoa(JSON.stringify(payload)); // Encode payload as base64
-
-    const encodedUrl = `${url}?payload=${encodeURIComponent(base64Payload)}`; // Append encoded payload to the URL
-
-    const response = await fetch(encodedUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
-
-    const result = await response.json();
-
-    // Extract the assistant's message from the response
-    const assistantMessage = result.message;
-
-    // Display the assistant's response
-    displayMessage(assistantMessage, 'assistant-message');
-
-    // Add the assistant's message to the messages array
-    messages.push({ role: "assistant", content: assistantMessage });
-}
-
-        // Function to display a message in the chat interface
-        function displayMessage(content, className) {
-            const messageElement = document.createElement('div');
-            messageElement.className = 'message ' + className;
-            messageElement.innerText = content;
-            messageElement.dataset.order = messageOrder++;
-            chatMessages.appendChild(messageElement);
-
-            // Scroll to the latest message
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        // Event listener for the send button
-        sendButton.addEventListener('click', () => {
-            const userInputValue = userInput.value.trim();
-
-            if (userInputValue !== '') {
-                // Display the user's message
-                displayMessage(userInputValue, 'user-message');
-
-                // Send the user's message to the backend
-                sendMessage(userInputValue);
-
-                // Clear the input field
-                userInput.value = '';
-            }
-        });
-
-        // Event listener for the Enter key in the input field
-        userInput.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter') {
-                sendButton.click();
-                event.preventDefault();
-            }
-        });
-
-        // Initial system message
-        const systemMessage = 'Hi! This is Cambridge Copilot, I am here to help you, what up?';
-        displayMessage(systemMessage, 'assistant-message');
-        messages.push({ role: "assistant", content: systemMessage });
-    </script><!-- End: JavaScript -->
-    </div><!-- Start: Global --><!-- End: Global -->
+    </div>
     <script src="/assets/bootstrap/js/bootstrap.min.js?h=79ff9637b74326c362fb6f7f5801a7ba"></script>
     <script src="/assets/js/bs-init.js?h=67ee20cf4e5150919853fca3720bbf0d"></script>
     <script src="/assets/js/blocker.js?h=6f7e0f8639ed61783b096dc5e5de43b2"></script>
