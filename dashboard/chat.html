@@ -150,13 +150,18 @@
     const url = 'https://faas-blr1-8177d592.doserverless.co/api/v1/web/fn-3f654592-68ef-49a6-a44d-081ec4e1f4c5/models/chat';
 
     const payload = {
-      key: key,
-      message: {
-        messages: messages.concat({ role: "user", content: message })
-      }
-    };
+  key: key,
+  message: {
+    messages: messages.concat({ role: "user", content: message })
+  }
+};
 
-    const base64Payload = btoa(JSON.stringify(payload)); // Encode payload as base64
+// Encode payload as UTF-8
+const encoder = new TextEncoder();
+const payloadData = encoder.encode(JSON.stringify(payload));
+
+// Encode the payload as base64
+const base64Payload = btoa(String.fromCharCode.apply(null, payloadData));
 
     const encodedUrl = `${url}?payload=${encodeURIComponent(base64Payload)}`; // Append encoded payload to the URL
 
