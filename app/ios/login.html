@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Login - Cambridge Copilot</title>
+    <meta name="theme-color" content="#000000">
+    <link rel="canonical" href="https://copilot.schooltool.io/app/ios/login.html">
+    <meta property="og:url" content="https://copilot.schooltool.io/app/ios/login.html">
+    <meta name="twitter:description" content="Unleash your genius with AI. Cambridge Copilot empowers students worldwide with AI and allows them to reach their potential. Try Copilot out today!">
+    <meta property="og:description" content="Unleash your genius with AI. Cambridge Copilot empowers students worldwide with AI and allows them to reach their potential. Try Copilot out today!">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://copilot.schooltool.io/assets/img/final_transparent.webp">
+    <meta name="twitter:image" content="https://copilot.schooltool.io/assets/img/final_transparent.webp">
+    <meta name="twitter:title" content="Cambridge Copilot">
+    <meta name="description" content="Unleash your genius with AI. Cambridge Copilot empowers students worldwide with AI and allows them to reach their potential. Try Copilot out today!">
+    <meta property="og:title" content="Cambridge Copilot">
+    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
+    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
+    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
+    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
+    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css?h=a5485e0ab00205da91ef331b68d4354e">
+    <link rel="manifest" href="/manifest.json?h=d5bd2e24ee18035bf0c24f8a353d9508">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic&amp;display=swap">
+    <link rel="stylesheet" href="/assets/css/Navbar-With-Button-icons.css?h=a497b474303557870d4119806bf50ac2">
+    <link rel="stylesheet" href="/assets/css/style.css?h=64fbcde49b216958ba1e4c01ed60586a">
+</head>
+
+<body style="height: 1000px;background: rgb(0,0,0);">
+    <!-- Start: Navbar With Button -->
+    <nav class="navbar navbar-light navbar-expand-md sticky-top py-3" style="background: var(--bs-navbar-color);text-decoration: none;">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="/app/ios/index.html"><img src="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f" style="height: auto;width: 30px;background: linear-gradient(var(--bs-red), var(--bs-blue));border-radius: 6px;margin-right: 10px;" width="50" height="67"><span style="color: #ffffff;font-weight: bold;font-size: 17px;">Cambridge Copilot App</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2" style="color: rgba(0, 0, 0, 0.55);background: #ffffff;"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-2"></div>
+        </div>
+    </nav><!-- End: Navbar With Button -->
+    <!-- Start: Login Form Basic -->
+    <section class="py-4 py-xl-5" style="background: #000000;color: rgb(255,255,255);">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6 col-lg-9 col-xl-4" style="width: 95%;">
+                    <div class="card mb-5" style="background: linear-gradient(131deg, #f3f4f9, #f7edff 50%, #dfecff 100%);">
+                        <div class="card-body d-flex flex-column align-items-center">
+                            <div class="bs-icon-xl bs-icon-circle bs-icon-primary bs-icon my-4" style="margin-bottom: 0px!important;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person">
+                                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"></path>
+                                </svg></div>
+                            <h2 style="color: rgb(0,0,0);margin: 10px;margin-top: 0px;">Login</h2><form class="text-center" onsubmit="submitForm(event)">
+    <div class="mb-3">
+        <input class="form-control" type="email" name="email" id="emailInput" placeholder="Email" required>
+    </div>
+    <div class="mb-3">
+        <input class="form-control" type="password" name="password" id="passwordInput" placeholder="Password" required>
+    </div>
+    <div class="mb-3">
+        <button id="submitButton" class="btn btn-primary d-block w-100" type="submit">Login</button>
+    </div>
+    <p id="errorText" class="text-danger"></p>
+</form>
+
+<script>
+    var submissionCount = 0;
+    var maxSubmissions = 10;
+
+    function submitForm(event) {
+        event.preventDefault();
+
+        if (submissionCount >= maxSubmissions) {
+            return; // Prevent further submissions if the limit is reached
+        }
+
+        var email = document.getElementById("emailInput").value;
+        var password = document.getElementById("passwordInput").value;
+
+        var url = "https://faas-blr1-8177d592.doserverless.co/api/v1/web/fn-3f654592-68ef-49a6-a44d-081ec4e1f4c5/default/login";
+        url += "?email=" + encodeURIComponent(email) + "&password=" + encodeURIComponent(password);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        // Disable the submit button
+        var submitButton = document.getElementById("submitButton");
+        submitButton.disabled = true;
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                // Enable the submit button
+                submitButton.disabled = false;
+
+                if (xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    var success = response.success;
+                    if (success === "true") {
+                        var account = JSON.stringify(response.account);
+                        console.log(account);
+                        // Save account value in a cookie called "account"
+                        var d = new Date();
+d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000)); // Set the expiration time to 30 days from now
+var expires = "expires=" + d.toUTCString();
+document.cookie = "account=" + account + ";" + expires + ";path=/";
+                        window.location.href = "home.html"
+                    } else {
+                        var error = response.error;
+                        var errorText = document.getElementById("errorText");
+                        errorText.textContent = error;
+                        errorText.style.display = "block";
+                    }
+                } else {
+                    console.log("Login failed!");
+                    // Handle the failed response if needed
+                }
+
+                // Increment the submission count
+                submissionCount++;
+            }
+        };
+
+        xhr.send();
+    }
+</script>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- End: Login Form Basic -->
+    <script src="/assets/bootstrap/js/bootstrap.min.js?h=79ff9637b74326c362fb6f7f5801a7ba"></script>
+    <script src="/assets/js/bs-init.js?h=67ee20cf4e5150919853fca3720bbf0d"></script>
+    <script src="/assets/js/blocker.js?h=6f7e0f8639ed61783b096dc5e5de43b2"></script>
+    <script src="/assets/js/user.js?h=412e228ddb6e4a31813f073aa144cb01"></script>
+</body>
+
+</html>
