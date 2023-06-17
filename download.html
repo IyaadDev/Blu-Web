@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-bs-theme="auto" lang="en">
+<html data-bs-theme="dark" lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -14,86 +14,6 @@
     <meta property="og:image" content="https://copilot.schooltool.io/assets/img/final_transparent.webp">
     <meta name="twitter:image" content="https://copilot.schooltool.io/assets/img/final_transparent.webp">
     <meta name="twitter:title" content="Cambridge Copilot">
-    <script>
-        (function() {
-
-            // JavaScript snippet handling Dark/Light mode switching
-
-            const getStoredTheme = () => localStorage.getItem('theme');
-            const setStoredTheme = theme => localStorage.setItem('theme', theme);
-            const forcedTheme = document.documentElement.getAttribute('data-bss-forced-theme');
-
-            const getPreferredTheme = () => {
-
-                if (forcedTheme) return forcedTheme;
-
-                const storedTheme = getStoredTheme();
-                if (storedTheme) {
-                    return storedTheme;
-                }
-
-                const pageTheme = document.documentElement.getAttribute('data-bs-theme');
-
-                if (pageTheme) {
-                    return pageTheme;
-                }
-
-                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-            }
-
-            const setTheme = theme => {
-                if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                    document.documentElement.setAttribute('data-bs-theme', 'dark');
-                } else {
-                    document.documentElement.setAttribute('data-bs-theme', theme);
-                }
-            }
-
-            setTheme(getPreferredTheme());
-
-            const showActiveTheme = (theme, focus = false) => {
-                const themeSwitchers = [].slice.call(document.querySelectorAll('.theme-switcher'));
-
-                if (!themeSwitchers.length) return;
-
-                for (const themeSwitcher of themeSwitchers) {
-
-                    const themeSwitcherText = document.querySelector('#theme-text');
-                    const activeThemeIcon = document.querySelector('.theme-icon-active use');
-                    const btnToActive = document.querySelector('[data-bs-theme-value="' + theme + '"]');
-
-                    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-                        element.classList.remove('active');
-                        element.setAttribute('aria-pressed', 'false');
-                    });
-
-                    btnToActive.classList.add('active');
-                    btnToActive.setAttribute('aria-pressed', 'true');
-                }
-            }
-
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-                const storedTheme = getStoredTheme();
-                if (storedTheme !== 'light' && storedTheme !== 'dark') {
-                    setTheme(getPreferredTheme());
-                }
-            });
-
-            window.addEventListener('DOMContentLoaded', () => {
-                showActiveTheme(getPreferredTheme());
-
-                document.querySelectorAll('[data-bs-theme-value]')
-                    .forEach(toggle => {
-                        toggle.addEventListener('click', () => {
-                            const theme = toggle.getAttribute('data-bs-theme-value');
-                            setStoredTheme(theme);
-                            setTheme(theme);
-                            showActiveTheme(theme);
-                        })
-                    })
-            });
-        })();
-    </script>
     <link rel="icon" type="image/webp" sizes="433x576" href="assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
     <link rel="icon" type="image/webp" sizes="433x576" href="assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
     <link rel="icon" type="image/webp" sizes="433x576" href="assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
@@ -112,8 +32,8 @@
 
 <body class="text-center" style="color: rgb(255,255,255);background: rgb(0,0,0);">
     <!-- Start: Navbar With Button -->
-    <nav class="navbar navbar-light navbar-expand-md sticky-top py-3" style="background: var(--bs-navbar-color);text-decoration: none;">
-        <div class="container"><a class="navbar-brand d-flex align-items-center" href="../index.html"><img src="assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f" style="height: auto;width: 30px;background: linear-gradient(var(--bs-red), var(--bs-blue));border-radius: 6px;margin-right: 10px;" width="50" height="67"><span style="color: #ffffff;font-weight: bold;font-size: 17px;">Cambridge Copilot</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2" style="color: rgba(0, 0, 0, 0.55);background: #ffffff;"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+    <nav class="navbar navbar-light navbar-expand-md sticky-top py-3" style="text-decoration: none;background: #000000;">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="../index.html" style="color: rgb(255,255,255);"><img src="assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f" style="height: auto;width: 30px;background: linear-gradient(var(--bs-red), var(--bs-blue));border-radius: 6px;margin-right: 10px;" width="50" height="67"><span>Cambridge Copilot</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2" style="color: rgba(0, 0, 0, 0.55);background: #ffffff;"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-2">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link" href="pricing.html" style="color: #ffffff;">Pricing</a></li>
