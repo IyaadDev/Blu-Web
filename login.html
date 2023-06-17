@@ -1,63 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-bs-theme="auto" lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Login - Cambridge Copilot</title>
-    <meta name="theme-color" content="#000000">
     <link rel="canonical" href="https://copilot.schooltool.io/login.html">
     <meta property="og:url" content="https://copilot.schooltool.io/login.html">
-    <meta name="twitter:description" content="Unleash your genius with AI. Cambridge Copilot empowers students worldwide with AI and allows them to reach their potential. Try Copilot out today!">
-    <meta property="og:description" content="Unleash your genius with AI. Cambridge Copilot empowers students worldwide with AI and allows them to reach their potential. Try Copilot out today!">
+    <meta name="twitter:description" content="An Ultra-Advanced AI-Copilot for Students and teachers">
     <meta name="twitter:card" content="summary">
     <meta property="og:type" content="website">
+    <meta name="description" content="Cambridge Copilot is an ultra-advanced AI-Powered tool designed for students, teachers and many other audiences, it's free for everyone">
     <meta property="og:image" content="https://copilot.schooltool.io/assets/img/final_transparent.webp">
     <meta name="twitter:image" content="https://copilot.schooltool.io/assets/img/final_transparent.webp">
     <meta name="twitter:title" content="Cambridge Copilot">
-    <meta name="description" content="Unleash your genius with AI. Cambridge Copilot empowers students worldwide with AI and allows them to reach their potential. Try Copilot out today!">
-    <meta property="og:title" content="Cambridge Copilot">
-    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
-    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
-    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
-    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
-    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
-    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css?h=a5485e0ab00205da91ef331b68d4354e">
-    <link rel="manifest" href="/manifest.json?h=d5bd2e24ee18035bf0c24f8a353d9508">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic&amp;display=swap">
-    <link rel="stylesheet" href="/assets/css/Navbar-With-Button-icons.css?h=a497b474303557870d4119806bf50ac2">
-    <link rel="stylesheet" href="/assets/css/style.css?h=64fbcde49b216958ba1e4c01ed60586a">
+    <script>
+        (function() {
+
+            // JavaScript snippet handling Dark/Light mode switching
+
+            const getStoredTheme = () => localStorage.getItem('theme');
+            const setStoredTheme = theme => localStorage.setItem('theme', theme);
+            const forcedTheme = document.documentElement.getAttribute('data-bss-forced-theme');
+
+            const getPreferredTheme = () => {
+
+                if (forcedTheme) return forcedTheme;
+
+                const storedTheme = getStoredTheme();
+                if (storedTheme) {
+                    return storedTheme;
+                }
+
+                const pageTheme = document.documentElement.getAttribute('data-bs-theme');
+
+                if (pageTheme) {
+                    return pageTheme;
+                }
+
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+
+            const setTheme = theme => {
+                if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-bs-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-bs-theme', theme);
+                }
+            }
+
+            setTheme(getPreferredTheme());
+
+            const showActiveTheme = (theme, focus = false) => {
+                const themeSwitchers = [].slice.call(document.querySelectorAll('.theme-switcher'));
+
+                if (!themeSwitchers.length) return;
+
+                for (const themeSwitcher of themeSwitchers) {
+
+                    const themeSwitcherText = document.querySelector('#theme-text');
+                    const activeThemeIcon = document.querySelector('.theme-icon-active use');
+                    const btnToActive = document.querySelector('[data-bs-theme-value="' + theme + '"]');
+
+                    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                        element.classList.remove('active');
+                        element.setAttribute('aria-pressed', 'false');
+                    });
+
+                    btnToActive.classList.add('active');
+                    btnToActive.setAttribute('aria-pressed', 'true');
+                }
+            }
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                const storedTheme = getStoredTheme();
+                if (storedTheme !== 'light' && storedTheme !== 'dark') {
+                    setTheme(getPreferredTheme());
+                }
+            });
+
+            window.addEventListener('DOMContentLoaded', () => {
+                showActiveTheme(getPreferredTheme());
+
+                document.querySelectorAll('[data-bs-theme-value]')
+                    .forEach(toggle => {
+                        toggle.addEventListener('click', () => {
+                            const theme = toggle.getAttribute('data-bs-theme-value');
+                            setStoredTheme(theme);
+                            setTheme(theme);
+                            showActiveTheme(theme);
+                        })
+                    })
+            });
+        })();
+    </script>
+    <link rel="icon" type="image/webp" sizes="433x576" href="assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
+    <link rel="icon" type="image/webp" sizes="433x576" href="assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
+    <link rel="icon" type="image/webp" sizes="433x576" href="assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
+    <link rel="icon" type="image/webp" sizes="433x576" href="assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
+    <link rel="icon" type="image/webp" sizes="433x576" href="assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=f2227b17fa6c7a34bd10412e47a7658b">
+    <link rel="manifest" href="manifest.json?h=5f35deaa20178483e7bf3963621308e0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/style.css?h=704ffe4c83b4c64e706ce414b69644f2">
 </head>
 
-<body style="height: 1000px;background: rgb(0,0,0);">
-    <!-- Start: Navbar With Button -->
-    <nav class="navbar navbar-light navbar-expand-md sticky-top py-3" style="background: var(--bs-navbar-color);text-decoration: none;">
-        <div class="container"><a class="navbar-brand d-flex align-items-center" href="../index.html"><img src="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f" style="height: auto;width: 30px;background: linear-gradient(var(--bs-red), var(--bs-blue));border-radius: 6px;margin-right: 10px;" width="50" height="67"><span style="color: #ffffff;font-weight: bold;font-size: 17px;">Cambridge Copilot</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2" style="color: rgba(0, 0, 0, 0.55);background: #ffffff;"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-2">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" href="/pricing.html" style="color: #ffffff;">Pricing</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/download.html" style="color: #ffffff;">Download</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" style="color: #ffffff;">About</a></li>
-                </ul><div><a class="btn btn-primary" role="button" style="margin-right: 8px;" href="/signup.html">Sign up</a><a class="btn btn-primary" role="button" href="/login.html">Login</a></div>
-            </div>
-        </div>
-    </nav><!-- End: Navbar With Button -->
-    <!-- Start: Login Form Basic -->
-    <section class="py-4 py-xl-5" style="background: #000000;color: rgb(255,255,255);">
-        <div class="container">
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-6 col-xl-4">
-                    <div class="card mb-5" style="background: linear-gradient(131deg, #f3f4f9, #f7edff 50%, #dfecff 100%);">
-                        <div class="card-body d-flex flex-column align-items-center">
-                            <div class="bs-icon-xl bs-icon-circle bs-icon-primary bs-icon my-4" style="margin-bottom: 0px!important;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person">
-                                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"></path>
-                                </svg></div>
-                            <h2 style="color: rgb(0,0,0);margin: 10px;margin-top: 0px;">Login</h2><form class="text-center" onsubmit="submitForm(event)">
+<body class="bg-gradient-primary">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-9 col-lg-12 col-xl-10">
+                <div class="card shadow-lg o-hidden border-0 my-5">
+                    <div class="card-body p-0">
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-flex"><img class="flex-grow-1 bg-login-image" src="assets/img/dogs/image3.jpeg?h=cbc3a40dae521ddee89bf6b026abde71" style="width: 100%;"></div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h4 class="text-dark mb-4" style="margin-bottom: 50px!important;">Welcome Back!</h4>
+                                    </div><form class="text-center" onsubmit="submitForm(event)">
     <div class="mb-3">
         <input class="form-control" type="email" name="email" id="emailInput" placeholder="Email" required>
     </div>
     <div class="mb-3">
         <input class="form-control" type="password" name="password" id="passwordInput" placeholder="Password" required>
+    </div>
+        <div class="form-check form-switch form-check-inline" style="color: rgb(0,0,0);margin-top: 10px;margin-bottom: 25px;"><input id="formCheck-1" class="form-check-input" type="checkbox" required /><label class="form-check-label" for="formCheck-1">I agree to the <a href="https://copilot.schooltool.io/rulebook" target="_blank">Usage Policy</a></label>
     </div>
     <div class="mb-3">
         <button id="submitButton" class="btn btn-primary d-block w-100" type="submit">Login</button>
@@ -103,7 +170,7 @@
                         console.log(account);
                         // Save account value in a cookie called "account"
                         document.cookie = "account=" + account;
-                        window.location.href = "/dashboard/dashboard.html"
+                        window.location.href = "dashboard/dashboard.html"
                     } else {
                         var error = response.error;
                         var errorText = document.getElementById("errorText");
@@ -124,16 +191,20 @@
     }
 </script>
 
+                                    <div class="text-center"><a class="small" href="forgot-password.html">Forgot Password?</a></div>
+                                    <div class="text-center"><a class="small" href="signup.html">Create an Account!</a><br><a class="small" href="index.html">Back to Copilot</a></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section><!-- End: Login Form Basic -->
-    <script src="/assets/bootstrap/js/bootstrap.min.js?h=79ff9637b74326c362fb6f7f5801a7ba"></script>
-    <script src="/assets/js/bs-init.js?h=67ee20cf4e5150919853fca3720bbf0d"></script>
-    <script src="/assets/js/blocker.js?h=6f7e0f8639ed61783b096dc5e5de43b2"></script>
-    <script src="/assets/js/user.js?h=412e228ddb6e4a31813f073aa144cb01"></script>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js?h=b4349cf7232e6b66621e089f2b9beee5"></script>
+    <script src="assets/js/bs-init.js?h=67ee20cf4e5150919853fca3720bbf0d"></script>
+    <script src="assets/js/blocker.js?h=6f7e0f8639ed61783b096dc5e5de43b2"></script>
+    <script src="assets/js/user.js?h=412e228ddb6e4a31813f073aa144cb01"></script>
 </body>
 
 </html>

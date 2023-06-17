@@ -1,57 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-bs-theme="auto" lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Demo - Ask Cambridge Copilot a question</title>
-    <meta name="theme-color" content="#000000">
     <link rel="canonical" href="https://copilot.schooltool.io/ask.html">
     <meta property="og:url" content="https://copilot.schooltool.io/ask.html">
-    <meta name="twitter:description" content="Unleash your genius with AI. Cambridge Copilot empowers students worldwide with AI and allows them to reach their potential. Try Copilot out today!">
-    <meta property="og:description" content="Unleash your genius with AI. Cambridge Copilot empowers students worldwide with AI and allows them to reach their potential. Try Copilot out today!">
+    <meta name="twitter:description" content="An Ultra-Advanced AI-Copilot for Students and teachers">
     <meta name="twitter:card" content="summary">
     <meta property="og:type" content="website">
+    <meta name="description" content="Cambridge Copilot is an ultra-advanced AI-Powered tool designed for students, teachers and many other audiences, it's free for everyone">
     <meta property="og:image" content="https://copilot.schooltool.io/assets/img/final_transparent.webp">
     <meta name="twitter:image" content="https://copilot.schooltool.io/assets/img/final_transparent.webp">
     <meta name="twitter:title" content="Cambridge Copilot">
-    <meta name="description" content="Unleash your genius with AI. Cambridge Copilot empowers students worldwide with AI and allows them to reach their potential. Try Copilot out today!">
-    <meta property="og:title" content="Cambridge Copilot">
-    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
-    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
-    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
-    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
-    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
-    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css?h=a5485e0ab00205da91ef331b68d4354e">
-    <link rel="manifest" href="/manifest.json?h=d5bd2e24ee18035bf0c24f8a353d9508">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic&amp;display=swap">
-    <link rel="stylesheet" href="/assets/fonts/font-awesome.min.css?h=bb270fba1988038f5680f75b7475565e">
-    <link rel="stylesheet" href="/assets/css/animate.min.css?h=5512c3e92e3931978c9ddcc7dbeed22b">
-    <link rel="stylesheet" href="/assets/css/Navbar-With-Button-icons.css?h=a497b474303557870d4119806bf50ac2">
-    <link rel="stylesheet" href="/assets/css/style.css?h=64fbcde49b216958ba1e4c01ed60586a">
+    <script>
+        (function() {
+
+            // JavaScript snippet handling Dark/Light mode switching
+
+            const getStoredTheme = () => localStorage.getItem('theme');
+            const setStoredTheme = theme => localStorage.setItem('theme', theme);
+            const forcedTheme = document.documentElement.getAttribute('data-bss-forced-theme');
+
+            const getPreferredTheme = () => {
+
+                if (forcedTheme) return forcedTheme;
+
+                const storedTheme = getStoredTheme();
+                if (storedTheme) {
+                    return storedTheme;
+                }
+
+                const pageTheme = document.documentElement.getAttribute('data-bs-theme');
+
+                if (pageTheme) {
+                    return pageTheme;
+                }
+
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+
+            const setTheme = theme => {
+                if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-bs-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-bs-theme', theme);
+                }
+            }
+
+            setTheme(getPreferredTheme());
+
+            const showActiveTheme = (theme, focus = false) => {
+                const themeSwitchers = [].slice.call(document.querySelectorAll('.theme-switcher'));
+
+                if (!themeSwitchers.length) return;
+
+                for (const themeSwitcher of themeSwitchers) {
+
+                    const themeSwitcherText = document.querySelector('#theme-text');
+                    const activeThemeIcon = document.querySelector('.theme-icon-active use');
+                    const btnToActive = document.querySelector('[data-bs-theme-value="' + theme + '"]');
+
+                    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                        element.classList.remove('active');
+                        element.setAttribute('aria-pressed', 'false');
+                    });
+
+                    btnToActive.classList.add('active');
+                    btnToActive.setAttribute('aria-pressed', 'true');
+                }
+            }
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                const storedTheme = getStoredTheme();
+                if (storedTheme !== 'light' && storedTheme !== 'dark') {
+                    setTheme(getPreferredTheme());
+                }
+            });
+
+            window.addEventListener('DOMContentLoaded', () => {
+                showActiveTheme(getPreferredTheme());
+
+                document.querySelectorAll('[data-bs-theme-value]')
+                    .forEach(toggle => {
+                        toggle.addEventListener('click', () => {
+                            const theme = toggle.getAttribute('data-bs-theme-value');
+                            setStoredTheme(theme);
+                            setTheme(theme);
+                            showActiveTheme(theme);
+                        })
+                    })
+            });
+        })();
+    </script>
+    <link rel="icon" type="image/webp" sizes="433x576" href="assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
+    <link rel="icon" type="image/webp" sizes="433x576" href="assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
+    <link rel="icon" type="image/webp" sizes="433x576" href="assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
+    <link rel="icon" type="image/webp" sizes="433x576" href="assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
+    <link rel="icon" type="image/webp" sizes="433x576" href="assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=f2227b17fa6c7a34bd10412e47a7658b">
+    <link rel="manifest" href="manifest.json?h=5f35deaa20178483e7bf3963621308e0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css?h=4fd0f5bc13853fae144764d9c4a67c2c">
+    <link rel="stylesheet" href="assets/css/animate.min.css?h=5512c3e92e3931978c9ddcc7dbeed22b">
+    <link rel="stylesheet" href="assets/css/style.css?h=704ffe4c83b4c64e706ce414b69644f2">
 </head>
 
 <body style="background: #171717;color: rgb(255,255,255);">
     <!-- Start: Navbar With Button -->
     <nav class="navbar navbar-light navbar-expand-md sticky-top py-3" style="background: var(--bs-navbar-color);text-decoration: none;">
-        <div class="container"><a class="navbar-brand d-flex align-items-center" href="../index.html"><img src="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f" style="height: auto;width: 30px;background: linear-gradient(var(--bs-red), var(--bs-blue));border-radius: 6px;margin-right: 10px;" width="50" height="67"><span style="color: #ffffff;font-weight: bold;font-size: 17px;">Cambridge Copilot</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2" style="color: rgba(0, 0, 0, 0.55);background: #ffffff;"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="../index.html"><img src="assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f" style="height: auto;width: 30px;background: linear-gradient(var(--bs-red), var(--bs-blue));border-radius: 6px;margin-right: 10px;" width="50" height="67"><span style="color: #ffffff;font-weight: bold;font-size: 17px;">Cambridge Copilot</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2" style="color: rgba(0, 0, 0, 0.55);background: #ffffff;"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-2">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" href="/pricing.html" style="color: #ffffff;">Pricing</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/download.html" style="color: #ffffff;">Download</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html" style="color: #ffffff;">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="download.html" style="color: #ffffff;">Download</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" style="color: #ffffff;">About</a></li>
-                </ul><div><a class="btn btn-primary" role="button" style="margin-right: 8px;" href="/signup.html">Sign up</a><a class="btn btn-primary" role="button" href="/login.html">Login</a></div>
+                </ul><div><a class="btn btn-primary" role="button" style="margin-right: 8px;" href="signup.html">Sign up</a><a class="btn btn-primary" role="button" href="login.html">Login</a></div>
             </div>
         </div>
     </nav><!-- End: Navbar With Button -->
-    <header class="text-center text-white masthead" style="background: url('/assets/img/backgrounds/general/bg-masthead.jpg?h=ee9b21759e86acff127259186b5f0e4a')no-repeat center center;background-size: cover;">
-        <div class="container" style="margin-top: -75px;">
+    <header class="text-center text-white masthead" style="background: url('assets/img/backgrounds/general/bg-masthead.jpg?h=ee9b21759e86acff127259186b5f0e4a')no-repeat center center;background-size: cover;margin-top: 0px;height: 50vw;">
+        <div class="container">
             <div style="background: #7ad6ea;border-radius: 4px;">
-                <p class="text-center" style="margin-top: -75px;color: rgb(0,0,0);padding: 7px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-info-square-fill" style="font-size: 21px;height: 100%;">
+                <p class="text-center" style="color: rgb(0,0,0);padding: 7px;padding-top: 8px;box-shadow: 8px 9px 20px rgb(75,75,75);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-info-square-fill" style="font-size: 21px;height: 100%;">
                         <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.93 4.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path>
-                    </svg>&nbsp; You are using a <strong>&nbsp;</strong>slow,&nbsp;<strong>trial </strong>&nbsp;version of Copilot, sign up for free to unlock unlimited requests! You have a <strong>&nbsp;750 word </strong>&nbsp;limit, sign up for <strong>&nbsp;5,000+ words</strong></p>
+                    </svg>&nbsp; You are using a slow,&nbsp;<strong>trial </strong>&nbsp;version of Copilot, sign up for free to unlock unlimited requests! You have a <strong>&nbsp;750 word </strong>&nbsp;limit, sign up for <strong>&nbsp;5,000+ words</strong></p>
             </div>
-        </div><img src="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f" width="270" height="381" style="height: auto;width: 150px;">
+        </div><img src="assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f" width="270" height="381" style="height: auto;width: 150px;backdrop-filter: brightness(200%);-webkit-backdrop-filter: brightness(200%);border-radius: 16px;">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
@@ -121,7 +197,7 @@ setTimeout(() => {
 
 <!-- Add a loading icon -->
 <div id="loadingIcon" style="display: none;">
-    <img src="/assets/img/loading.gif?h=b3b655656cddae82e3cae3562975f4ae" alt="Loading" />
+    <img src="assets/img/loading.gif?h=b3b655656cddae82e3cae3562975f4ae" alt="Loading" />
 </div>
 
 <script>
@@ -165,7 +241,7 @@ setTimeout(() => {
                     var encodedResponse = btoa(xhr.responseText);
 
                     // Redirect to response.html with the encoded response
-                    window.location.href = "/response.html?response=" + encodedResponse;
+                    window.location.href = "response.html?response=" + encodedResponse;
                 } else {
                     // Request failed
                     var error = "Error " + xhr.status + ": " + xhr.statusText;
@@ -174,7 +250,7 @@ setTimeout(() => {
                     var encodedError = btoa(error);
 
                     // Redirect to response.html with the encoded error message
-                    window.location.href = "/response.html?error=" + Error;
+                    window.location.href = "response.html?error=" + Error;
                 }
             }
         };
@@ -190,94 +266,44 @@ setTimeout(() => {
             </div>
         </div>
     </header>
-    <section class="text-center bg-light features-icons">
+    <section class="text-center bg-light features-icons" style="margin: 50px;padding: 50px;border-radius: 18px;">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-4" style="color: rgb(255,255,255);background: #000000;border: 8px solid rgb(255,255,255);border-radius: 20px;">
                     <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
-                        <div class="d-flex features-icons-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person-lines-fill m-auto text-primary" data-bss-hover-animate="pulse" style="font-size: 72px;">
+                        <div class="d-flex justify-content-lg-center align-items-lg-center features-icons-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person-lines-fill m-auto text-primary" data-bss-hover-animate="pulse" style="font-size: 72px;margin: 10px!important;">
                                 <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"></path>
                             </svg></div>
-                        <h3 style="color: rgb(0,0,0);">Study smarter</h3>
-                        <p class="lead mb-0" style="color: rgb(0,0,0);">Get the most out of your study time with Blu. Make your time worth it!</p>
+                        <h3 style="color: rgb(255,255,255);font-weight: bold;font-size: 20px;">Study smarter</h3>
+                        <p class="lead mb-0" style="color: rgb(255,255,255);font-size: 15px;">Get the most out of your study time with Blu. Make your time worth it!</p>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4" style="color: rgb(255,255,255);background: #000000;border: 8px solid rgb(255,255,255);border-radius: 20px;">
                     <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
-                        <div class="d-flex features-icons-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-cash-coin m-auto text-primary" data-bss-hover-animate="pulse" style="font-size: 72px;">
+                        <div class="d-flex justify-content-lg-center align-items-lg-center features-icons-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-cash-coin m-auto text-primary" data-bss-hover-animate="pulse" style="font-size: 72px;margin: 10px!important;">
                                 <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"></path>
                                 <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z"></path>
                                 <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z"></path>
                                 <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"></path>
                             </svg></div>
-                        <h3 style="color: rgb(0,0,0);">Free, forever</h3>
-                        <p class="lead mb-0" style="color: rgb(0,0,0);">Indeed, Blu is a free AI tool, unlike any other.</p>
+                        <h3 style="color: rgb(255,255,255);font-weight: bold;font-size: 20px;">Free, forever</h3>
+                        <p class="lead mb-0" style="color: rgb(255,255,255);font-size: 15px;">Indeed, Blu is a free AI tool, unlike any other.</p>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4" style="color: rgb(255,255,255);background: #000000;border: 8px solid rgb(255,255,255);border-radius: 20px;">
                     <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
-                        <div class="d-flex features-icons-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle m-auto text-primary" data-bss-hover-animate="pulse" style="font-size: 69px;width: 72px;height: auto;">
+                        <div class="d-flex justify-content-lg-center align-items-lg-center features-icons-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle m-auto text-primary" data-bss-hover-animate="pulse" style="font-size: 69px;width: 72px;height: auto;margin: 10px!important;">
                                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
                                 <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"></path>
                             </svg></div>
-                        <h3 style="color: rgb(0,0,0);">Easy to Use</h3>
-                        <p class="lead mb-0" style="color: rgb(0,0,0);">Who said using AI's had to be difficult?</p>
+                        <h3 style="color: rgb(255,255,255);font-weight: bold;font-size: 20px;">Easy to Use</h3>
+                        <p class="lead mb-0" style="color: rgb(255,255,255);font-size: 15px;">Who said using AI's had to be difficult?</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="showcase">
-        <div class="container-fluid p-0">
-            <div class="row g-0">
-                <div class="col-lg-6 text-white order-lg-2 showcase-img" style="background-image: url(&quot;/assets/img/bg-showcase-1.jpg?h=717dfd74ae2c9ffe2373428a05a3f602&quot;);"><span></span></div>
-                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
-                    <h2>Fully Responsive</h2>
-                    <p class="lead mb-0">Blu can talk with you just like a human</p>
-                </div>
-            </div>
-            <div class="row g-0">
-                <div class="col-lg-6 text-white showcase-img" style="background-image: url(&quot;/assets/img/bg-showcase-2.jpg?h=82f59ff9dc7ce5bb277d6dfa737a6e45&quot;);"><span></span></div>
-                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
-                    <h2>Data Protection</h2>
-                    <p class="lead mb-0">With data being transported in the cloud with encryption on <strong>90% </strong>of the time, your requests are <strong>private, </strong>unlike ChatGPT, which stores and reviews your conversations</p>
-                </div>
-            </div>
-            <div class="row g-0">
-                <div class="col-lg-6 text-white order-lg-2 showcase-img" style="background-image: url(&quot;/assets/img/bg-showcase-3.jpg?h=c7ec0329b8412e48f1b91e5c6a8cc7cf&quot;);"><span></span></div>
-                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
-                    <h2>Easy to Use</h2>
-                    <p class="lead mb-0">Blu empowers individuals with AI, no matter the financial status, no matter the issues.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="text-center bg-light testimonials">
-        <div class="container">
-            <h2 class="mb-5" style="color: rgb(0,0,0);">What people are saying...</h2>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="mx-auto testimonial-item mb-5 mb-lg-0"><img class="rounded-circle img-fluid mb-3" src="/assets/img/aaryan.webp?h=cb5255832afe255a003ee7149485d54f">
-                        <h5 style="color: rgb(0,0,0);">Aaryaan S.</h5>
-                        <p class="font-weight-light mb-0" style="color: rgb(0,0,0);">"Blu is <strong>amazing</strong>! I literally put hardest Maths question and it answered! Now I can study"</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="mx-auto testimonial-item mb-5 mb-lg-0"><img class="rounded-circle img-fluid mb-3" src="/assets/img/b_hussain.webp?h=59b5a2ac551333c3f877746008cda2bc" style="height: 206.261px;width: 192px;">
-                        <h5 style="color: rgb(0,0,0);">B. Hussain</h5>
-                        <p class="font-weight-light mb-0" style="color: rgb(0,0,0);">"Blu, is <strong>valid</strong>"</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="mx-auto testimonial-item mb-5 mb-lg-0"><img class="rounded-circle img-fluid mb-3" src="/assets/img/testimonials-2.jpg?h=2f7c16e307b7da2bdf38d580d9a3fed9">
-                        <h5 style="color: rgb(0,0,0);">Sanjay G.</h5>
-                        <p class="font-weight-light mb-0" style="color: rgb(0,0,0);">"<strong>Blu </strong>&gt; ChatGPT"</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="text-center text-white call-to-action" style="background: url(&quot;/assets/img/backgrounds/general/bg-masthead.jpg?h=ee9b21759e86acff127259186b5f0e4a&quot;) no-repeat center center;background-size: cover;">
+    <section class="text-center text-white call-to-action" style="background: url(&quot;assets/img/backgrounds/general/bg-masthead.jpg?h=ee9b21759e86acff127259186b5f0e4a&quot;) no-repeat center center;background-size: cover;margin-top: 10px;padding: 50px;">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
@@ -288,7 +314,7 @@ setTimeout(() => {
                     <form>
                         <div class="row">
                             <div class="col-12 col-md-9 mb-2 mb-md-0"><input class="form-control form-control-lg" type="email" placeholder="Enter your email..."></div>
-                            <div class="col-12 col-md-3"><a class="btn btn-primary btn-lg" role="button" href="/signup.html">Sign up!</a></div>
+                            <div class="col-12 col-md-3"><a class="btn btn-primary btn-lg" role="button" href="signup.html">Sign up!</a></div>
                         </div>
                     </form>
                 </div>
@@ -320,88 +346,10 @@ setTimeout(() => {
             </div>
         </div>
     </footer>
-    <div class="d-none d-md-block" style="margin-right: 74px;">
-        <div style="width: 100%;height: 38px;">
-            <!-- Start: Acc -->
-            <div style="width: 250px;">
-                <!-- Start: 1 Row 3 Columns -->
-                <div class="container">
-                    <div class="row" style="width: 338px;">
-                        <div class="col-md-4 col-xl-1"><style>
-    /* CSS animation for image rotation */
-    @keyframes rotate {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    /* Style for the reload image */
-    #reload-img {
-        margin-bottom: -5px;
-      width: 25px;
-      height: 25px;
-      cursor: pointer;
-    }
-  </style>
-<div>
-    <img id="reload-img" src="/assets/img/reload.webp?h=08d0a3a7a4471b546b82aad6896fc9f7" alt="Refresh" height="25px" width="25px"/>
-  </div>
-
-  <script>
-    // Function to reload the page
-    function reloadPage() {
-      location.reload();
-    }
-
-    // Add click event listener to the reload image
-    var reloadImg = document.getElementById("reload-img");
-    reloadImg.addEventListener("click", function() {
-      // Start the rotation animation
-      reloadImg.style.animation = "rotate 1s linear infinite";
-      // Disable pointer events on the image to prevent multiple clicks
-      reloadImg.style.pointerEvents = "none";
-      // Call reloadPage function after a delay to allow the rotation animation to play
-      setTimeout(reloadPage, 1000);
-    });
-  </script></div>
-                        <div class="col-md-4 col-xl-4 text-start d-xl-flex justify-content-xl-center align-items-xl-center">
-                            <p class="day-message" style="color: rgb(255,255,255);padding: 0px;padding-top: 0px;margin: 0px;width: 150px;">Connecting...</p><!-- Start: Greet -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script>
-  $(document).ready(function() {
-    function fetchTokens(key) {
-      $.getJSON(`https://faas-blr1-8177d592.doserverless.co/api/v1/web/fn-3f654592-68ef-49a6-a44d-081ec4e1f4c5/default/fetchrow?key=${key}`, function(data) {
-        var tokens = data.fields.tokens;
-        var final_message = tokens + " Tokens";
-        var approximation = tokens * 1350;
-        console.log(approximation);
-        $("p.day-message").text(final_message);
-      });
-    }
-
-    // Replace 'your_key_variable' with the actual key variable from your external source
-    fetchTokens(key);
-
-    setInterval(function() {
-      fetchTokens(key);
-    }, 3600000); // Fetch tokens every hour (3600000 milliseconds)
-  });
-</script>
-
-                        </div>
-                        <div class="col-md-4 col-xl-2"><img src="/assets/img/coin.webp?h=7efc62dffe642c77ec7f9e9b9c07598e" style="width: 50px;height: 50px;margin: 15px;margin-left: 0px;"></div>
-                    </div>
-                </div><!-- End: 1 Row 3 Columns -->
-            </div><!-- End: Acc -->
-        </div>
-    </div>
-    <script src="/assets/bootstrap/js/bootstrap.min.js?h=79ff9637b74326c362fb6f7f5801a7ba"></script>
-    <script src="/assets/js/bs-init.js?h=67ee20cf4e5150919853fca3720bbf0d"></script>
-    <script src="/assets/js/blocker.js?h=6f7e0f8639ed61783b096dc5e5de43b2"></script>
-    <script src="/assets/js/user.js?h=412e228ddb6e4a31813f073aa144cb01"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js?h=b4349cf7232e6b66621e089f2b9beee5"></script>
+    <script src="assets/js/bs-init.js?h=67ee20cf4e5150919853fca3720bbf0d"></script>
+    <script src="assets/js/blocker.js?h=6f7e0f8639ed61783b096dc5e5de43b2"></script>
+    <script src="assets/js/user.js?h=412e228ddb6e4a31813f073aa144cb01"></script>
 </body>
 
 </html>

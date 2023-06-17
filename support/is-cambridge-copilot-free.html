@@ -1,55 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-bs-theme="auto" lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Is Cambridge Copilot free? - Cambridge Copilot Support</title>
-    <meta name="theme-color" content="#000000">
     <link rel="canonical" href="https://copilot.schooltool.io/support/is-cambridge-copilot-free.html">
     <meta property="og:url" content="https://copilot.schooltool.io/support/is-cambridge-copilot-free.html">
-    <meta name="twitter:description" content="Unleash your genius with AI. Cambridge Copilot empowers students worldwide with AI and allows them to reach their potential. Try Copilot out today!">
-    <meta property="og:description" content="Unleash your genius with AI. Cambridge Copilot empowers students worldwide with AI and allows them to reach their potential. Try Copilot out today!">
+    <meta name="twitter:description" content="An Ultra-Advanced AI-Copilot for Students and teachers">
     <meta name="twitter:card" content="summary">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://copilot.schooltool.io/assets/img/final_transparent.webp">
     <meta name="twitter:image" content="https://copilot.schooltool.io/assets/img/final_transparent.webp">
     <meta name="twitter:title" content="Cambridge Copilot">
-    <meta property="og:title" content="Cambridge Copilot">
     <meta name="description" content="Long story short, free! But depending on your use case, it's best to read further on this article">
-    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
-    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
-    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
-    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
-    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
-    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css?h=a5485e0ab00205da91ef331b68d4354e">
-    <link rel="manifest" href="/manifest.json?h=d5bd2e24ee18035bf0c24f8a353d9508">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic&amp;display=swap">
-    <link rel="stylesheet" href="/assets/css/Navbar-With-Button-icons.css?h=a497b474303557870d4119806bf50ac2">
-    <link rel="stylesheet" href="/assets/css/style.css?h=64fbcde49b216958ba1e4c01ed60586a">
+    <script>
+        (function() {
+
+            // JavaScript snippet handling Dark/Light mode switching
+
+            const getStoredTheme = () => localStorage.getItem('theme');
+            const setStoredTheme = theme => localStorage.setItem('theme', theme);
+            const forcedTheme = document.documentElement.getAttribute('data-bss-forced-theme');
+
+            const getPreferredTheme = () => {
+
+                if (forcedTheme) return forcedTheme;
+
+                const storedTheme = getStoredTheme();
+                if (storedTheme) {
+                    return storedTheme;
+                }
+
+                const pageTheme = document.documentElement.getAttribute('data-bs-theme');
+
+                if (pageTheme) {
+                    return pageTheme;
+                }
+
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+
+            const setTheme = theme => {
+                if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-bs-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-bs-theme', theme);
+                }
+            }
+
+            setTheme(getPreferredTheme());
+
+            const showActiveTheme = (theme, focus = false) => {
+                const themeSwitchers = [].slice.call(document.querySelectorAll('.theme-switcher'));
+
+                if (!themeSwitchers.length) return;
+
+                for (const themeSwitcher of themeSwitchers) {
+
+                    const themeSwitcherText = document.querySelector('#theme-text');
+                    const activeThemeIcon = document.querySelector('.theme-icon-active use');
+                    const btnToActive = document.querySelector('[data-bs-theme-value="' + theme + '"]');
+
+                    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                        element.classList.remove('active');
+                        element.setAttribute('aria-pressed', 'false');
+                    });
+
+                    btnToActive.classList.add('active');
+                    btnToActive.setAttribute('aria-pressed', 'true');
+                }
+            }
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                const storedTheme = getStoredTheme();
+                if (storedTheme !== 'light' && storedTheme !== 'dark') {
+                    setTheme(getPreferredTheme());
+                }
+            });
+
+            window.addEventListener('DOMContentLoaded', () => {
+                showActiveTheme(getPreferredTheme());
+
+                document.querySelectorAll('[data-bs-theme-value]')
+                    .forEach(toggle => {
+                        toggle.addEventListener('click', () => {
+                            const theme = toggle.getAttribute('data-bs-theme-value');
+                            setStoredTheme(theme);
+                            setTheme(theme);
+                            showActiveTheme(theme);
+                        })
+                    })
+            });
+        })();
+    </script>
+    <link rel="icon" type="image/webp" sizes="433x576" href="../assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
+    <link rel="icon" type="image/webp" sizes="433x576" href="../assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
+    <link rel="icon" type="image/webp" sizes="433x576" href="../assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
+    <link rel="icon" type="image/webp" sizes="433x576" href="../assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
+    <link rel="icon" type="image/webp" sizes="433x576" href="../assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css?h=f2227b17fa6c7a34bd10412e47a7658b">
+    <link rel="manifest" href="../manifest.json?h=5f35deaa20178483e7bf3963621308e0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/style.css?h=704ffe4c83b4c64e706ce414b69644f2">
 </head>
 
 <body>
     <!-- Start: Navbar With Button -->
     <nav class="navbar navbar-light navbar-expand-md py-3">
-        <div class="container"><a class="navbar-brand d-flex align-items-center" href="/support/index.html"><span class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-bezier">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="index.html"><span class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-bezier">
                         <path fill-rule="evenodd" d="M0 10.5A1.5 1.5 0 0 1 1.5 9h1A1.5 1.5 0 0 1 4 10.5v1A1.5 1.5 0 0 1 2.5 13h-1A1.5 1.5 0 0 1 0 11.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm10.5.5A1.5 1.5 0 0 1 13.5 9h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM6 4.5A1.5 1.5 0 0 1 7.5 3h1A1.5 1.5 0 0 1 10 4.5v1A1.5 1.5 0 0 1 8.5 7h-1A1.5 1.5 0 0 1 6 5.5v-1zM7.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z"></path>
                         <path d="M6 4.5H1.866a1 1 0 1 0 0 1h2.668A6.517 6.517 0 0 0 1.814 9H2.5c.123 0 .244.015.358.043a5.517 5.517 0 0 1 3.185-3.185A1.503 1.503 0 0 1 6 5.5v-1zm3.957 1.358A1.5 1.5 0 0 0 10 5.5v-1h4.134a1 1 0 1 1 0 1h-2.668a6.517 6.517 0 0 1 2.72 3.5H13.5c-.123 0-.243.015-.358.043a5.517 5.517 0 0 0-3.185-3.185z"></path>
                     </svg></span><span style="color: #ffffff;">Cambridge Copilot Support</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="navbar-nav me-auto"></ul><a class="btn btn-primary" role="button" href="/dashboard/dash.html">Open Copilot</a>
+                <ul class="navbar-nav me-auto"></ul><a class="btn btn-primary" role="button" href="../dashboard/dash.html">Open Copilot</a>
             </div>
         </div>
     </nav><!-- End: Navbar With Button -->
     <!-- Start: Question -->
     <div style="margin-top: 10px;margin-bottom: 10px;">
         <h1 class="one">Is Cambridge Copilot free?</h1>
-        <p class="two">You get about 12<strong>+ AED a year in FREE tokens</strong>. That ought to last you a lifetime, shouldn't it? 51 Tokens a month, enjoy amigo!</p><a class="btn btn-primary three" role="button" href="/signup.html">Sign up now</a>
+        <p class="two">You get about 12<strong>+ AED a year in FREE tokens</strong>. That ought to last you a lifetime, shouldn't it? 51 Tokens a month, enjoy amigo!</p><a class="btn btn-primary three" role="button" href="../signup.html">Sign up now</a>
     </div><!-- End: Question -->
-    <script src="/assets/bootstrap/js/bootstrap.min.js?h=79ff9637b74326c362fb6f7f5801a7ba"></script>
-    <script src="/assets/js/bs-init.js?h=67ee20cf4e5150919853fca3720bbf0d"></script>
-    <script src="/assets/js/blocker.js?h=6f7e0f8639ed61783b096dc5e5de43b2"></script>
-    <script src="/assets/js/user.js?h=412e228ddb6e4a31813f073aa144cb01"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js?h=b4349cf7232e6b66621e089f2b9beee5"></script>
+    <script src="../assets/js/bs-init.js?h=67ee20cf4e5150919853fca3720bbf0d"></script>
+    <script src="../assets/js/blocker.js?h=6f7e0f8639ed61783b096dc5e5de43b2"></script>
+    <script src="../assets/js/user.js?h=412e228ddb6e4a31813f073aa144cb01"></script>
 </body>
 
 </html>

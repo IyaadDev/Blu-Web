@@ -1,49 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-bs-theme="auto" lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Pricing - Cambridge Copilot</title>
-    <meta name="theme-color" content="#000000">
     <link rel="canonical" href="https://copilot.schooltool.io/pricing.html">
     <meta property="og:url" content="https://copilot.schooltool.io/pricing.html">
-    <meta name="twitter:description" content="Unleash your genius with AI. Cambridge Copilot empowers students worldwide with AI and allows them to reach their potential. Try Copilot out today!">
-    <meta property="og:description" content="Unleash your genius with AI. Cambridge Copilot empowers students worldwide with AI and allows them to reach their potential. Try Copilot out today!">
+    <meta name="twitter:description" content="An Ultra-Advanced AI-Copilot for Students and teachers">
     <meta name="twitter:card" content="summary">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://copilot.schooltool.io/assets/img/final_transparent.webp">
     <meta name="twitter:image" content="https://copilot.schooltool.io/assets/img/final_transparent.webp">
     <meta name="twitter:title" content="Cambridge Copilot">
-    <meta property="og:title" content="Cambridge Copilot">
     <meta name="description" content="Unleash your genius with AI, how much does it cost you? Read on!">
-    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
-    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
-    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
-    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
-    <link rel="icon" type="image/png" sizes="433x576" href="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
-    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css?h=a5485e0ab00205da91ef331b68d4354e">
-    <link rel="manifest" href="/manifest.json?h=d5bd2e24ee18035bf0c24f8a353d9508">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic&amp;display=swap">
-    <link rel="stylesheet" href="/assets/fonts/font-awesome.min.css?h=bb270fba1988038f5680f75b7475565e">
-    <link rel="stylesheet" href="/assets/css/Navbar-With-Button-icons.css?h=a497b474303557870d4119806bf50ac2">
-    <link rel="stylesheet" href="/assets/css/style.css?h=64fbcde49b216958ba1e4c01ed60586a">
+    <script>
+        (function() {
+
+            // JavaScript snippet handling Dark/Light mode switching
+
+            const getStoredTheme = () => localStorage.getItem('theme');
+            const setStoredTheme = theme => localStorage.setItem('theme', theme);
+            const forcedTheme = document.documentElement.getAttribute('data-bss-forced-theme');
+
+            const getPreferredTheme = () => {
+
+                if (forcedTheme) return forcedTheme;
+
+                const storedTheme = getStoredTheme();
+                if (storedTheme) {
+                    return storedTheme;
+                }
+
+                const pageTheme = document.documentElement.getAttribute('data-bs-theme');
+
+                if (pageTheme) {
+                    return pageTheme;
+                }
+
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+
+            const setTheme = theme => {
+                if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-bs-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-bs-theme', theme);
+                }
+            }
+
+            setTheme(getPreferredTheme());
+
+            const showActiveTheme = (theme, focus = false) => {
+                const themeSwitchers = [].slice.call(document.querySelectorAll('.theme-switcher'));
+
+                if (!themeSwitchers.length) return;
+
+                for (const themeSwitcher of themeSwitchers) {
+
+                    const themeSwitcherText = document.querySelector('#theme-text');
+                    const activeThemeIcon = document.querySelector('.theme-icon-active use');
+                    const btnToActive = document.querySelector('[data-bs-theme-value="' + theme + '"]');
+
+                    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                        element.classList.remove('active');
+                        element.setAttribute('aria-pressed', 'false');
+                    });
+
+                    btnToActive.classList.add('active');
+                    btnToActive.setAttribute('aria-pressed', 'true');
+                }
+            }
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                const storedTheme = getStoredTheme();
+                if (storedTheme !== 'light' && storedTheme !== 'dark') {
+                    setTheme(getPreferredTheme());
+                }
+            });
+
+            window.addEventListener('DOMContentLoaded', () => {
+                showActiveTheme(getPreferredTheme());
+
+                document.querySelectorAll('[data-bs-theme-value]')
+                    .forEach(toggle => {
+                        toggle.addEventListener('click', () => {
+                            const theme = toggle.getAttribute('data-bs-theme-value');
+                            setStoredTheme(theme);
+                            setTheme(theme);
+                            showActiveTheme(theme);
+                        })
+                    })
+            });
+        })();
+    </script>
+    <link rel="icon" type="image/webp" sizes="433x576" href="assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
+    <link rel="icon" type="image/webp" sizes="433x576" href="assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
+    <link rel="icon" type="image/webp" sizes="433x576" href="assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
+    <link rel="icon" type="image/webp" sizes="433x576" href="assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
+    <link rel="icon" type="image/webp" sizes="433x576" href="assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=f2227b17fa6c7a34bd10412e47a7658b">
+    <link rel="manifest" href="manifest.json?h=5f35deaa20178483e7bf3963621308e0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css?h=4fd0f5bc13853fae144764d9c4a67c2c">
+    <link rel="stylesheet" href="assets/css/style.css?h=704ffe4c83b4c64e706ce414b69644f2">
 </head>
 
 <body class="text-center" style="color: rgb(255,255,255);background: rgb(0,0,0);">
     <!-- Start: Navbar With Button -->
     <nav class="navbar navbar-light navbar-expand-md sticky-top py-3" style="background: var(--bs-navbar-color);text-decoration: none;">
-        <div class="container"><a class="navbar-brand d-flex align-items-center" href="../index.html"><img src="/assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f" style="height: auto;width: 30px;background: linear-gradient(var(--bs-red), var(--bs-blue));border-radius: 6px;margin-right: 10px;" width="50" height="67"><span style="color: #ffffff;font-weight: bold;font-size: 17px;">Cambridge Copilot</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2" style="color: rgba(0, 0, 0, 0.55);background: #ffffff;"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="../index.html"><img src="assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f" style="height: auto;width: 30px;background: linear-gradient(var(--bs-red), var(--bs-blue));border-radius: 6px;margin-right: 10px;" width="50" height="67"><span style="color: #ffffff;font-weight: bold;font-size: 17px;">Cambridge Copilot</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2" style="color: rgba(0, 0, 0, 0.55);background: #ffffff;"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-2">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" href="/pricing.html" style="color: #ffffff;">Pricing</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/download.html" style="color: #ffffff;">Download</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html" style="color: #ffffff;">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="download.html" style="color: #ffffff;">Download</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" style="color: #ffffff;">About</a></li>
-                </ul><div><a class="btn btn-primary" role="button" style="margin-right: 8px;" href="/signup.html">Sign up</a><a class="btn btn-primary" role="button" href="/login.html">Login</a></div>
+                </ul><div><a class="btn btn-primary" role="button" style="margin-right: 8px;" href="signup.html">Sign up</a><a class="btn btn-primary" role="button" href="login.html">Login</a></div>
             </div>
         </div>
     </nav><!-- End: Navbar With Button -->
-    <h1 style="font-weight: bold;font-size: 9vw;margin-top: 6vw;">Pricing made&nbsp;<span class="gradient-text-something">simple</span></h1><div>
+    <h1 style="font-weight: bold;font-size: 9vw;margin-top: 6vw;">Pricing made&nbsp;<span class="gradient-text-something" style="font-size: 9vw;">simple</span></h1><div>
     <p>You get <strong>51 FREE Tokens </strong>with a new account! Admins will donate <strong>free tokens </strong>to accounts that need help<br>
     Do you <strong>need </strong>free tokens? Email executives@schooltool.io<br>
     Copilot can&#39;t stay free forever without donations, and donations have no incentives, so they&#39;re attached with bonuses.</p>
@@ -55,64 +131,64 @@
                 <div class="col-lg-4">
                     <div class="card mb-5 mb-lg-0">
                         <div class="card-body">
-                            <h5 class="card-title text-muted text-uppercase text-center">tryouts</h5>
-                            <h6 class="card-price text-center">1<span class="period">AED</span></h6>
+                            <h5 class="card-title text-muted text-uppercase text-center" style="color: #000000;">tryouts</h5>
+                            <h6 class="card-price text-center" style="color: #000000;">1<span class="period" style="color: #000000;font-weight: bold;">AED</span></h6>
                             <hr>
                             <ul class="fa-ul">
-                                <li><span class="fa-li"><i class="fa fa-check"></i></span><strong>20&nbsp;</strong>Tokens</li>
-                                <li><span class="fa-li"><i class="fa fa-check"></i></span><strong>0.03 AED PT</strong></li>
-                                <li><span class="fa-li"><i class="fa fa-check"></i></span>Random Bonuses</li>
-                                <li><span class="fa-li"><i class="fa fa-check"></i></span>Community Access<br></li>
-                                <li><span class="fa-li"><i class="fa fa-times text-muted"></i></span>&nbsp;<strong>Free </strong>giveaway tokens</li>
+                                <li style="color: #000000;"><span class="fa-li"><i class="fa fa-check" style="color: #000000;"></i></span><strong>20&nbsp;</strong>Tokens</li>
+                                <li style="color: #000000;"><span class="fa-li"><i class="fa fa-check" style="color: #000000;"></i></span><strong>0.03 AED PT</strong></li>
+                                <li style="color: #000000;"><span class="fa-li"><i class="fa fa-check" style="color: #000000;"></i></span>Random Bonuses</li>
+                                <li style="color: #000000;"><span class="fa-li"><i class="fa fa-check" style="color: #000000;"></i></span>Community Access<br></li>
+                                <li style="color: #000000;"><span class="fa-li"><i class="fa fa-times text-muted"></i></span>&nbsp;<strong>Free </strong>giveaway tokens</li>
                                 <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Human agent support</li>
                                 <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Monthly <strong>free </strong>bonuses</li>
-                            </ul><a class="btn btn-outline-primary d-block text-uppercase w-100" role="button" href="/bnpl.html">Buy Now</a>
+                            </ul><a class="btn btn-outline-primary d-block text-uppercase w-100" role="button" href="bnpl.html">Buy Now</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="card mb-5 mb-lg-0">
                         <div class="card-body">
-                            <h5 class="card-title text-muted text-uppercase text-center">premium</h5>
-                            <h6 class="card-price text-center">2<span class="period">AED</span></h6>
+                            <h5 class="card-title text-muted text-uppercase text-center" style="color: #000000;">premium</h5>
+                            <h6 class="card-price text-center" style="color: #000000;">2<span class="period" style="color: #000000;font-weight: bold;">AED</span></h6>
                             <hr>
                             <ul class="fa-ul">
-                                <li><span class="fa-li"><i class="fa fa-check"></i></span><strong>100</strong> Tokens&nbsp;</li>
-                                <li><span class="fa-li"><i class="fa fa-check"></i></span><strong>0.02 PT</strong></li>
-                                <li><span class="fa-li"><i class="fa fa-check"></i></span>Random Bonuses</li>
-                                <li><span class="fa-li"><i class="fa fa-check"></i></span>Community Access<br></li>
-                                <li><span class="fa-li"><i class="fa fa-check"></i></span>&nbsp;<strong>Free </strong>giveaway tokens</li>
-                                <li><span class="fa-li"><i class="fa fa-check"></i></span>&nbsp;<strong>Human </strong>agent support</li>
+                                <li style="color: #000000;"><span class="fa-li"><i class="fa fa-check" style="color: #000000;"></i></span><strong>100</strong> Tokens&nbsp;</li>
+                                <li style="color: #000000;"><span class="fa-li"><i class="fa fa-check" style="color: #000000;"></i></span><strong>0.02 PT</strong></li>
+                                <li style="color: #000000;"><span class="fa-li"><i class="fa fa-check" style="color: #000000;"></i></span>Random Bonuses</li>
+                                <li style="color: #000000;"><span class="fa-li"><i class="fa fa-check" style="color: #000000;"></i></span>Community Access<br></li>
+                                <li style="color: #000000;"><span class="fa-li" style="color: #000000;"><i class="fa fa-check"></i></span>&nbsp;<strong>Free </strong>giveaway tokens</li>
+                                <li style="color: #000000;"><span class="fa-li"><i class="fa fa-check" style="color: #000000;"></i></span>&nbsp;<strong>Human </strong>agent support</li>
                                 <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Monthly <strong>free </strong>bonuses</li>
-                            </ul><a class="btn btn-outline-primary d-block text-uppercase w-100" role="button" href="/bnpl.html">Buy Now</a>
+                            </ul><a class="btn btn-outline-primary d-block text-uppercase w-100" role="button" href="bnpl.html">Buy Now</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="card mb-5 mb-lg-0">
                         <div class="card-body">
-                            <h5 class="card-title text-muted text-uppercase text-center">Limetime</h5>
-                            <h6 class="card-price text-center">5<span class="period">AED</span></h6>
+                            <h5 class="card-title text-muted text-uppercase text-center" style="color: #000000;">Limetime</h5>
+                            <h6 class="card-price text-center" style="color: #000000;">5<span class="period" style="color: #000000;font-weight: bold;">AED</span></h6>
                             <hr>
                             <ul class="fa-ul">
-                                <li><span class="fa-li"><i class="fa fa-check"></i></span><strong>333</strong> Tokens&nbsp;<span style="font-size: 12px;padding: 5px;border-radius: 6px;color: rgb(0,0,0);background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);font-weight: bold;">Top tier rate</span></li>
-                                <li><span class="fa-li"><i class="fa fa-check"></i></span><strong>0.015 PT</strong></li>
-                                <li><span class="fa-li"><i class="fa fa-check"></i></span>Random Bonuses</li>
-                                <li><span class="fa-li"><i class="fa fa-check"></i></span>Community Access<br></li>
-                                <li><span class="fa-li"><i class="fa fa-check"></i></span>&nbsp;<strong>Free </strong>giveaway tokens</li>
-                                <li><span class="fa-li"><i class="fa fa-check"></i></span>&nbsp;<strong>Human </strong>agent support</li>
-                                <li><span class="fa-li"><i class="fa fa-check"></i></span>Monthly <strong>free </strong>bonuses</li>
-                            </ul><a class="btn btn-outline-primary d-block text-uppercase w-100" role="button" href="/bnpl.html">Buy Now</a>
+                                <li style="color: #000000;"><span class="fa-li"><i class="fa fa-check" style="color: #000000;"></i></span><strong>333</strong> Tokens&nbsp;<span style="font-size: 12px;padding: 5px;border-radius: 6px;color: rgb(0,0,0);background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);font-weight: bold;">Top tier rate</span></li>
+                                <li style="color: #000000;"><span class="fa-li"><i class="fa fa-check" style="color: #000000;"></i></span><strong>0.015 PT</strong></li>
+                                <li style="color: #000000;"><span class="fa-li"><i class="fa fa-check" style="color: #000000;"></i></span>Random Bonuses</li>
+                                <li style="color: #000000;"><span class="fa-li"><i class="fa fa-check" style="color: #000000;"></i></span>Community Access<br></li>
+                                <li style="color: #000000;"><span class="fa-li"><i class="fa fa-check" style="color: #000000;"></i></span>&nbsp;<strong>Free </strong>giveaway tokens</li>
+                                <li style="color: #000000;"><span class="fa-li"><i class="fa fa-check" style="color: #000000;"></i></span>&nbsp;<strong>Human </strong>agent support</li>
+                                <li style="color: #000000;"><span class="fa-li"><i class="fa fa-check" style="color: #000000;"></i></span>Monthly <strong>free </strong>bonuses</li>
+                            </ul><a class="btn btn-outline-primary d-block text-uppercase w-100" role="button" href="bnpl.html">Buy Now</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section><!-- End: Bold BS4 Responsive Pricing Table Snippet -->
-    <script src="/assets/bootstrap/js/bootstrap.min.js?h=79ff9637b74326c362fb6f7f5801a7ba"></script>
-    <script src="/assets/js/bs-init.js?h=67ee20cf4e5150919853fca3720bbf0d"></script>
-    <script src="/assets/js/blocker.js?h=6f7e0f8639ed61783b096dc5e5de43b2"></script>
-    <script src="/assets/js/user.js?h=412e228ddb6e4a31813f073aa144cb01"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js?h=b4349cf7232e6b66621e089f2b9beee5"></script>
+    <script src="assets/js/bs-init.js?h=67ee20cf4e5150919853fca3720bbf0d"></script>
+    <script src="assets/js/blocker.js?h=6f7e0f8639ed61783b096dc5e5de43b2"></script>
+    <script src="assets/js/user.js?h=412e228ddb6e4a31813f073aa144cb01"></script>
 </body>
 
 </html>

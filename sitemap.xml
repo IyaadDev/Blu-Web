@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
-        <loc>https://copilot.schooltool.io/app/ios/home.html</loc>
-    </url>
-    <url>
-        <loc>https://copilot.schooltool.io/app/ios/</loc>
-    </url>
-    <url>
-        <loc>https://copilot.schooltool.io/app/ios/login.html</loc>
-    </url>
-    <url>
         <loc>https://copilot.schooltool.io/dashboard/acc.html</loc>
     </url>
     <url>
@@ -70,10 +61,10 @@
         <loc>https://copilot.schooltool.io/download.html</loc>
     </url>
     <url>
-        <loc>https://copilot.schooltool.io/</loc>
+        <loc>https://copilot.schooltool.io/forgot-password.html</loc>
     </url>
     <url>
-        <loc>https://copilot.schooltool.io/index-light.html</loc>
+        <loc>https://copilot.schooltool.io/</loc>
     </url>
     <url>
         <loc>https://copilot.schooltool.io/index-logged-in.html</loc>
