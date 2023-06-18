@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Demo - Ask Copilot</title>
-    <link rel="canonical" href="https://copilot.schooltool.io/dashboard/ask.html">
-    <meta property="og:url" content="https://copilot.schooltool.io/dashboard/ask.html">
+    <title>Imaginator - Cambridge Copilot</title>
+    <link rel="canonical" href="https://copilot.schooltool.io/dashboard/imaginating.html">
+    <meta property="og:url" content="https://copilot.schooltool.io/dashboard/imaginating.html">
     <meta name="twitter:description" content="An Ultra-Advanced AI-Copilot for Students and teachers">
     <meta name="twitter:card" content="summary">
     <meta property="og:type" content="website">
@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="../assets/css/style.css?h=34adbd91c719847c5864fdaa53d73260">
 </head>
 
-<body style="height: 1000px;background: rgb(0,0,0);color: rgb(255,255,255);">
+<body class="text-center">
     <!-- Start: Navbar With Button -->
     <nav class="navbar navbar-light navbar-expand-lg sticky-top py-3" style="background: var(--bs-navbar-hover-color);padding: 0px;">
         <div class="container"><a class="navbar-brand d-flex align-items-center" href="index.html"><img src="../assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f" style="height: auto;width: 30px;background: linear-gradient(var(--bs-red), var(--bs-blue));border-radius: 6px;margin-right: 10px;" width="50" height="67"><span style="color: #ffffff;font-weight: bold;">Copilot</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1" style="color: var(--bs-white);background: #ffffff;"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
@@ -117,15 +117,45 @@
             </div>
         </div>
     </nav><!-- End: Navbar With Button -->
-    <div class="container" style="height: 500px;">
-        <div>
-            <h1 class="text-center" style="font-size: 10vw;">Imaginate</h1>
-            <p class="text-center">Currently using:&nbsp;<a href="#" style="color: var(--bs-blue);">IyaadGPT-Base-Cheap</a></p><div class="text-center">
-    <form><input class="form-control" type="text" autofocus required minlength="10" maxlength="100" name="fmessage" placeholder="Ask BluCrest Ai a question..." style="background: rgb(244,244,244);color: rgb(0,0,0);" /></form>
-</div>
+    <header style="margin-top: 75px;"></header>
+    <div class="container">
+        <div class="card shadow-lg o-hidden border-0 my-5" style="background: rgb(255,255,255);color: rgb(0,0,0);min-height: 50vw;margin-bottom: 0px!important;">
+            <div class="card-body p-0">
+                <div class="row" style="padding-bottom: 0px!important;">
+                    <div class="col-lg-7" style="width: 100%;padding: 0px;padding-bottom: 0px!important;">
+                        <div style="width: 100%;height: 100%;">
+                            <div class="text-center p-5" style="padding: 0px!important;">
+                                <p style="margin: 30px;margin-bottom: 0px;padding: 5px;background: #00ffd5;border-radius: 10px;border-width: 0.1px;border-style: solid;margin-right: 50px;margin-left: 50px;font-size: small;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-info-square-fill">
+                                        <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.93 4.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path>
+                                    </svg><strong>&nbsp;Please wait about 1 minute for your dreams to come to life...</strong></p>
+                                <div class="text-center d-lg-flex justify-content-lg-center align-items-lg-center" style="width: 100%;">
+                                    <lottie-player mode="normal" src="../assets/js/painting.json?h=604ae47aa0a9d3c171d24d450e17a164" autoplay="" style="width: 60%;margin-right: 20%;margin-left: 20%;height: auto;" speed="1.5" loop=""></lottie-player>
+                                </div>
+                                <div class="text-center">
+                                    <h4 class="text-dark mb-4" style="font-size: x-large;">Imagining your<br><span class="gradient-text" style="font-size: 6.5vw;"><strong>Masterpiece...</strong></span></h4>
+                                </div>
+                            </div>
+                            <div class="text-center d-lg-flex justify-content-lg-center align-items-lg-center" style="width: 100%;">
+                                <lottie-player src="../assets/js/ldng.json?h=2a7bcaa2c064077cbdca0dc28916887c" mode="normal" speed="1.5" autoplay="" loop="" style="width: 10%;height: auto;margin-right: 45%;margin-left: 45%;margin-bottom: 25px;"></lottie-player>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </div><!-- Start: JS --><script>
+// Get the value of the "prompt" parameter from the URL
+const urlParams = new URLSearchParams(window.location.search);
+const promptBase64 = urlParams.get('prompt');
+
+// Decode the Base64-encoded prompt
+const decodedPrompt = atob(promptBase64);
+
+// Log the decoded prompt to the console
+console.log(decodedPrompt);
+</script><!-- End: JS -->
     <script src="../assets/bootstrap/js/bootstrap.min.js?h=b4349cf7232e6b66621e089f2b9beee5"></script>
+    <script src="../assets/js/lottie-player.min.js?h=3cea14ed971532d963dee147ed927d14"></script>
     <script src="../assets/js/bs-init.js?h=67ee20cf4e5150919853fca3720bbf0d"></script>
     <script src="../assets/js/blocker.js?h=6f7e0f8639ed61783b096dc5e5de43b2"></script>
     <script src="../assets/js/user.js?h=412e228ddb6e4a31813f073aa144cb01"></script>
