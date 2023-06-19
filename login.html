@@ -89,7 +89,12 @@
                         var account = JSON.stringify(response.account);
                         console.log(account);
                         // Save account value in a cookie called "account"
-                        document.cookie = "account=" + account;
+var date = new Date();
+date.setTime(date.getTime() + (5 * 24 * 60 * 60 * 1000)); // Set the expiration date to 5 days from now
+var expires = "expires=" + date.toUTCString();
+
+document.cookie = "account=" + account + ";" + expires + ";path=/";
+
                         window.location.href = "dashboard/dashboard.html"
                     } else {
                         var error = response.error;

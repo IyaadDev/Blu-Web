@@ -147,12 +147,14 @@
 // Get the value of the "prompt" parameter from the URL
 const urlParams = new URLSearchParams(window.location.search);
 const promptBase64 = urlParams.get('prompt');
+var saveCloud = urlParams.get('iDrive');
 
 // Decode the Base64-encoded prompt
 const decodedPrompt = atob(promptBase64);
 
 // Log the decoded prompt to the console
 console.log(decodedPrompt);
+console.log(saveCloud);
 </script><!-- End: JS -->
     <script src="../assets/bootstrap/js/bootstrap.min.js?h=b4349cf7232e6b66621e089f2b9beee5"></script>
     <script src="../assets/js/lottie-player.min.js?h=3cea14ed971532d963dee147ed927d14"></script>
