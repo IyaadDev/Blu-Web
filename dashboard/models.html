@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Copilot Dashboard</title>
-    <link rel="canonical" href="https://copilot.schooltool.io/dashboard/dash.html">
-    <meta property="og:url" content="https://copilot.schooltool.io/dashboard/dash.html">
+    <link rel="canonical" href="https://copilot.schooltool.io/dashboard/models.html">
+    <meta property="og:url" content="https://copilot.schooltool.io/dashboard/models.html">
     <meta name="twitter:description" content="An Ultra-Advanced AI-Copilot for Students and teachers">
     <meta name="twitter:card" content="summary">
     <meta property="og:type" content="website">
@@ -118,15 +118,87 @@
         </div>
     </nav><!-- End: Navbar With Button -->
     <div class="container text-center d-md-flex justify-content-md-center">
-        <div class="text-center" style="border-radius: 4px;margin: 16px;height: 100%;width: 100%;background: linear-gradient(33deg, #f3f4f9, #f3e4ff 50%, #cee2ff 100%);">
-            <p style="padding: 5px;margin: 15px;color: rgb(0,0,0);">Imaginator and Drive are temporarily unavailable due to them being <strong>at capacity</strong></p><img class="rounded-circle largerof" style="margin: 16px;border-radius: 150px;width: 150px;height: 150px;" src="../assets/img/aaryan.webp?h=cb5255832afe255a003ee7149485d54f" width="100%" height="100%">
-            <h1 class="day-message gradient-text" style="color: rgb(0,0,0);padding: 15px;padding-top: 0px;">Connecting to Copilot...</h1><!-- Start: Greet --><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <div class="text-center" style="border-radius: 4px;margin: 16px;height: 100%;width: 100%;background: linear-gradient(33deg, #f3f4f9, #f3e4ff 50%, #cee2ff 100%);"><img class="rounded-circle largerof" style="margin: 16px;border-radius: 150px;width: 150px;height: 150px;" src="../assets/img/aaryan.webp?h=cb5255832afe255a003ee7149485d54f" width="100%" height="100%">
+            <h1 class="day-message gradient-text" style="color: rgb(0,0,0);padding: 15px;padding-top: 0px;">Connecting to Copilot...</h1><div id="modelsContainer"></div>
+<style>
+    .card {
+        margin: 50px!important;
+    }
+</style>
+
+    <script>
+        fetch('https://faas-blr1-8177d592.doserverless.co/api/v1/web/fn-73995804-1aed-4058-a05a-14a0da1f3a57/package/fetchModels')
+            .then(response => response.json())
+            .then(data => {
+                const models = data.models;
+
+                for (const modelName in models) {
+                    const model = models[modelName];
+
+                    const card = document.createElement('div');
+                    card.classList.add('card');
+                    card.style.color = 'rgb(0, 0, 0)';
+
+                    const cardHeader = document.createElement('div');
+                    cardHeader.classList.add('card-header');
+
+                    const heading = document.createElement('h5');
+                    heading.classList.add('mb-0');
+                    heading.innerText = `${modelName} `;
+                    
+                    if (model.beta) {
+                        const betaTag = document.createElement('span');
+                        betaTag.style.color = 'var(--bs-form-invalid-color)';
+                        betaTag.style.fontSize = '15px';
+                        betaTag.style.borderWidth = '0.25px';
+                        betaTag.style.borderStyle = 'solid';
+                        betaTag.style.borderRadius = '3px';
+                        betaTag.style.padding = '2px';
+                        betaTag.innerText = 'Beta';
+                        heading.appendChild(betaTag);
+                    }
+                    
+                    cardHeader.appendChild(heading);
+                    card.appendChild(cardHeader);
+
+                    const cardBody = document.createElement('div');
+                    cardBody.classList.add('card-body');
+
+                    const description = document.createElement('p');
+                    description.classList.add('card-text');
+                    description.innerText = model.description;
+                    cardBody.appendChild(description);
+
+                    const packageUrl = document.createElement('p');
+                    packageUrl.classList.add('card-text');
+                    packageUrl.innerHTML = `Package URL: <span>${model.modelUrl}</span>`;
+                    cardBody.appendChild(packageUrl);
+
+                    const cost = document.createElement('p');
+                    cost.innerHTML = `Cost ~ <strong>5-10 Tokens</strong>`;
+                    cardBody.appendChild(cost);
+
+                    const openBtn = document.createElement('a');
+                    openBtn.classList.add('btn', 'btn-primary');
+                    openBtn.role = 'button';
+                    openBtn.href = 'create_model.html';
+                    openBtn.target = '_blank';
+                    openBtn.innerText = 'Open';
+                    cardBody.appendChild(openBtn);
+
+                    card.appendChild(cardBody);
+
+                    document.getElementById('modelsContainer').appendChild(card);
+                }
+            })
+            .catch(error => console.error(error));
+    </script><!-- Start: Greet --><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>$(document).ready(function() {
   function dateTime() {
     var ndate = new Date();
     var hours = ndate.getHours();
     var message = hours < 12 ? 'Good Morning' : hours < 18 ? 'Good Afternoon' : 'Good Evening';
-    var final_message = message + ", " + username;
+    var final_message = "These models fresh AF" + "! " + username;
     $("h1.day-message").text(final_message);
 
     $('.date').html(hours.leadingZeroes(2) + ":" + ndate.getMinutes().leadingZeroes(2) + ":" + ndate.getSeconds().leadingZeroes(2) + (hours < 12 ? 'AM' : 'PM'));
