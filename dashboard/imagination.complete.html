@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Imaginator - Cambridge Copilot</title>
-    <link rel="canonical" href="https://copilot.schooltool.io/dashboard/imaginating.html">
-    <meta property="og:url" content="https://copilot.schooltool.io/dashboard/imaginating.html">
+    <link rel="canonical" href="https://copilot.schooltool.io/dashboard/imagination.complete.html">
+    <meta property="og:url" content="https://copilot.schooltool.io/dashboard/imagination.complete.html">
     <meta name="twitter:description" content="An Ultra-Advanced AI-Copilot for Students and teachers">
     <meta name="twitter:card" content="summary">
     <meta property="og:type" content="website">
@@ -128,9 +128,7 @@
                                 <p style="margin: 30px;margin-bottom: 0px;padding: 5px;background: #00ffd5;border-radius: 10px;border-width: 0.1px;border-style: solid;margin-right: 50px;margin-left: 50px;font-size: small;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-info-square-fill">
                                         <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.93 4.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path>
                                     </svg><strong>&nbsp;Please wait about 1 minute for your dreams to come to life...</strong></p>
-                                <div class="text-center d-lg-flex justify-content-lg-center align-items-lg-center" style="width: 100%;">
-                                    <lottie-player mode="normal" src="../assets/js/painting.json?h=604ae47aa0a9d3c171d24d450e17a164" autoplay="" style="width: 60%;margin-right: 20%;margin-left: 20%;height: auto;" speed="1.5" loop=""></lottie-player>
-                                </div>
+                                <div class="text-center d-lg-flex justify-content-lg-center align-items-lg-center" style="width: 100%;"></div>
                                 <div class="text-center">
                                     <h4 class="text-dark mb-4" style="font-size: x-large;">Imagining your<br><span class="gradient-text" style="font-size: 6.5vw;"><strong>Masterpiece...</strong></span></h4>
                                 </div>
@@ -143,54 +141,7 @@
                 </div>
             </div>
         </div>
-    </div><!-- Start: JS --><script>
-setTimeout(function() {
-    // Get the value of the "prompt" parameter from the URL
-const urlParams = new URLSearchParams(window.location.search);
-const promptBase64 = urlParams.get('prompt');
-const saveCloud = urlParams.get('iDrive');
-
-// Decode the Base64-encoded prompt
-const decodedPrompt = atob(promptBase64);
-
-// Log the decoded prompt to the console
-console.log(decodedPrompt);
-console.log(saveCloud);
-
-// Encode the image URL in Base64
-const imgURL = 'https://example.com/image.jpg'; // Replace with the actual image URL
-const imgBase64 = btoa(imgURL);
-
-// Construct the request URL
-const requestURL = `https://faas-blr1-8177d592.doserverless.co/api/v1/web/fn-3f654592-68ef-49a6-a44d-081ec4e1f4c5/default/imaginate?key=${key}&prompt=${encodeURIComponent(decodedPrompt)}&saver=false&img=${encodeURIComponent(imgBase64)}`;
-
-// Make the GET request
-fetch(requestURL)
-  .then(response => response.json())
-  .then(data => {
-    // Check the "success" key in the response JSON
-    if (data.success === "false") {
-      // Display the "error" key to the user in red text
-      console.error(data.error);
-      // Display error message to the user (you can replace this with your desired implementation)
-      document.body.innerHTML = `<p style="color: red;">${data.error}</p>`;
-    } else if (data.success === "true") {
-      // Take the "img" key of the JSON
-      const imgURL = data.img;
-      // Encode it in Base64
-      const imgBase64 = btoa(imgURL);
-      // Redirect to imaginate-complete.html?img= base64 encoded URL
-      window.location.href = `imaginate-complete.html?img=${imgBase64}`;
-    }
-  })
-  .catch(error => {
-    console.error(error);
-    // Handle the error (you can replace this with your desired implementation)
-    document.body.innerHTML = `<p style="color: red;">An error occurred while processing your request.</p>`;
-  });
-}, 2000);
-</script>
-<!-- End: JS -->
+    </div>
     <script src="../assets/bootstrap/js/bootstrap.min.js?h=b4349cf7232e6b66621e089f2b9beee5"></script>
     <script src="../assets/js/lottie-player.min.js?h=3cea14ed971532d963dee147ed927d14"></script>
     <script src="../assets/js/bs-init.js?h=67ee20cf4e5150919853fca3720bbf0d"></script>
