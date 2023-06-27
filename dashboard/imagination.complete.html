@@ -22,10 +22,11 @@
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css?h=f2227b17fa6c7a34bd10412e47a7658b">
     <link rel="manifest" href="../manifest.json?h=5f35deaa20178483e7bf3963621308e0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/animate.min.css?h=5512c3e92e3931978c9ddcc7dbeed22b">
     <link rel="stylesheet" href="../assets/css/style.css?h=34adbd91c719847c5864fdaa53d73260">
 </head>
 
-<body class="text-center">
+<body class="text-center" style="padding-bottom: 50px;">
     <!-- Start: Navbar With Button -->
     <nav class="navbar navbar-light navbar-expand-lg sticky-top py-3" style="background: var(--bs-navbar-hover-color);padding: 0px;">
         <div class="container"><a class="navbar-brand d-flex align-items-center" href="index.html"><img src="../assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f" style="height: auto;width: 30px;background: linear-gradient(var(--bs-red), var(--bs-blue));border-radius: 6px;margin-right: 10px;" width="50" height="67"><span style="color: #ffffff;font-weight: bold;">Copilot</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1" style="color: var(--bs-white);background: #ffffff;"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
@@ -121,7 +122,7 @@
     <div class="container">
         <div class="card shadow-lg o-hidden border-0 my-5" style="background: rgb(255,255,255);color: rgb(0,0,0);min-height: 50vw;margin-bottom: 0px!important;">
             <div class="card-body p-0">
-                <h1>That's qui</h1><img id="finalImage" style="margin: 25px;width: auto;height: auto;padding: 10px;border-radius: 10px;background: #000000;box-shadow: 0px 0px 20px 4px;" src="../assets/img/loading.gif?h=b3b655656cddae82e3cae3562975f4ae"><button class="btn btn-primary" onclick="downloadImage()">Download</button><script>
+                <h1>That's qui</h1><img data-bss-hover-animate="pulse" id="finalImage" style="margin: 25px;width: auto;height: auto;padding: 10px;border-radius: 10px;background: #000000;box-shadow: 0px 0px 20px 4px;" src="../assets/img/loading.gif?h=b3b655656cddae82e3cae3562975f4ae"><br><button class="btn btn-primary" onclick="downloadImage()">Download</button><script>
   const urlParams = new URLSearchParams(window.location.search);
   const imgUrl = urlParams.get('img');
   var finalUrl = atob(imgUrl);
@@ -129,19 +130,15 @@
   // Set the source of the <img> tag to the decoded image URL
     console.log(document.getElementById('finalImage'));
   document.getElementById('finalImage').src = finalUrl;
-      // Function to handle the download \ document.body.removeChild(link);
-    // Function to handle the download button click
-  function downloadImage() {
-    fetch(finalUrl)
-      .then(response => response.blob())
-      .then(blob => {
-        // Create a temporary <a> element with the image data
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = 'image.jpg'; // Set the desired filename for the downloaded image
-        link.click();
-      })
-      .catch(error => console.error(error));
+      
+      function downloadImage() {
+    // Create a temporary <a> element
+    const link = document.createElement('a');
+    link.href = finalUrl;
+    link.download = finalUrl; // Set the desired filename for the downloaded image
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   }
 </script>
             </div>
