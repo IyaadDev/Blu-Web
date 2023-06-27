@@ -119,80 +119,132 @@
     </nav><!-- End: Navbar With Button -->
     <div class="container text-center d-md-flex justify-content-md-center">
         <div class="text-center" style="border-radius: 4px;margin: 16px;height: 100%;width: 100%;background: linear-gradient(33deg, #f3f4f9, #f3e4ff 50%, #cee2ff 100%);"><img class="rounded-circle largerof" style="margin: 16px;border-radius: 150px;width: 150px;height: 150px;" src="../assets/img/aaryan.webp?h=cb5255832afe255a003ee7149485d54f" width="100%" height="100%">
-            <h1 class="day-message gradient-text" style="color: rgb(0,0,0);padding: 15px;padding-top: 0px;">Connecting to Copilot...</h1><div id="modelsContainer"></div>
+            <h1 style="font-size: 3vw;margin-right: 2.5%;margin-left: 2.5%;padding: 5px;background: #000000;border-radius: 13px;margin-bottom: 0px;padding-top: 0px;"><span class="greet gradient-text-green">Load</span>&nbsp;<span class="gradient-text h1vr h1ver day-message" style="margin-top: -10px;font-size: 4.5vw;"><strong></strong></span><span class="user gradient-text">ing...</span><!-- Start: Greet -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+  var greetings = [
+    "Aren't these fresh",
+    "Why don't you make your own model",
+    "Wazzup",
+    "Isn't today is a great day",
+    "Ready for a productive day",
+    "Did life just get better",
+    "Feeling inspired",
+    "Enjoying the moment",
+    "What's good",
+    "Do you work smarter with Copilot,"
+  ];
+
+  function getRandomGreeting() {
+    var randomIndex = Math.floor(Math.random() * greetings.length);
+    return greetings[randomIndex];
+  }
+
+  function dateTime() {
+    var greeting = getRandomGreeting();
+    var final_message = greeting;
+    var usernamy = name + "?";
+
+    $("span.greet").text(final_message);
+    $("span.user").text(usernamy);
+
+    var date = new Date();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+
+    var formattedTime = hours.toString().leadingZeroes(2) + ":" + minutes.toString().leadingZeroes(2) + ":" + seconds.toString().leadingZeroes(2) + (hours < 12 ? ' AM' : ' PM');
+    $('.date').html(formattedTime);
+
+    clearInterval(updateInterval);
+  }
+
+  dateTime(); // Call dateTime() once to set the initial content
+
+  var updateInterval = setInterval(dateTime, 1000);
+});
+
+Number.prototype.leadingZeroes = function(len) {
+  return (new Array(len).fill('0', 0).join('') + this).slice(-Math.abs(len));
+}
+</script>
+
+</h1><div id="modelsContainer"></div>
 <style>
     .card {
         margin: 50px!important;
     }
 </style>
 
-    <script>
-        fetch('https://faas-blr1-8177d592.doserverless.co/api/v1/web/fn-73995804-1aed-4058-a05a-14a0da1f3a57/package/fetchModels')
-            .then(response => response.json())
-            .then(data => {
-                const models = data.models;
+<script>
+    fetch('https://faas-blr1-8177d592.doserverless.co/api/v1/web/fn-73995804-1aed-4058-a05a-14a0da1f3a57/package/fetchModels')
+        .then(response => response.json())
+        .then(data => {
+            const models = data.models;
 
-                for (const modelName in models) {
-                    const model = models[modelName];
+            for (const modelName in models) {
+                const model = models[modelName];
 
-                    const card = document.createElement('div');
-                    card.classList.add('card');
-                    card.style.color = 'rgb(0, 0, 0)';
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.style.color = 'rgb(0, 0, 0)';
 
-                    const cardHeader = document.createElement('div');
-                    cardHeader.classList.add('card-header');
+                const cardHeader = document.createElement('div');
+                cardHeader.classList.add('card-header');
 
-                    const heading = document.createElement('h5');
-                    heading.classList.add('mb-0');
-                    heading.innerText = `${modelName} `;
-                    
-                    if (model.beta) {
-                        const betaTag = document.createElement('span');
-                        betaTag.style.color = 'var(--bs-form-invalid-color)';
-                        betaTag.style.fontSize = '15px';
-                        betaTag.style.borderWidth = '0.25px';
-                        betaTag.style.borderStyle = 'solid';
-                        betaTag.style.borderRadius = '3px';
-                        betaTag.style.padding = '2px';
-                        betaTag.innerText = 'Beta';
-                        heading.appendChild(betaTag);
-                    }
-                    
-                    cardHeader.appendChild(heading);
-                    card.appendChild(cardHeader);
+                const heading = document.createElement('h5');
+                heading.classList.add('mb-0');
+                heading.innerText = `${modelName} `;
 
-                    const cardBody = document.createElement('div');
-                    cardBody.classList.add('card-body');
-
-                    const description = document.createElement('p');
-                    description.classList.add('card-text');
-                    description.innerText = model.description;
-                    cardBody.appendChild(description);
-
-                    const packageUrl = document.createElement('p');
-                    packageUrl.classList.add('card-text');
-                    packageUrl.innerHTML = `Package URL: <span>${model.modelUrl}</span>`;
-                    cardBody.appendChild(packageUrl);
-
-                    const cost = document.createElement('p');
-                    cost.innerHTML = `Cost ~ <strong>5-10 Tokens</strong>`;
-                    cardBody.appendChild(cost);
-
-                    const openBtn = document.createElement('a');
-                    openBtn.classList.add('btn', 'btn-primary');
-                    openBtn.role = 'button';
-                    openBtn.href = 'create_model.html';
-                    openBtn.target = '_blank';
-                    openBtn.innerText = 'Open';
-                    cardBody.appendChild(openBtn);
-
-                    card.appendChild(cardBody);
-
-                    document.getElementById('modelsContainer').appendChild(card);
+                if (model.beta) {
+                    const betaTag = document.createElement('span');
+                    betaTag.style.color = 'var(--bs-form-invalid-color)';
+                    betaTag.style.fontSize = '15px';
+                    betaTag.style.borderWidth = '0.25px';
+                    betaTag.style.borderStyle = 'solid';
+                    betaTag.style.borderRadius = '3px';
+                    betaTag.style.padding = '2px';
+                    betaTag.innerText = 'Beta';
+                    heading.appendChild(betaTag);
                 }
-            })
-            .catch(error => console.error(error));
-    </script><!-- Start: Greet --><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+                cardHeader.appendChild(heading);
+                card.appendChild(cardHeader);
+
+                const cardBody = document.createElement('div');
+                cardBody.classList.add('card-body');
+
+                const description = document.createElement('p');
+                description.classList.add('card-text');
+                description.innerText = model.description;
+                cardBody.appendChild(description);
+
+                const packageUrl = document.createElement('p');
+                packageUrl.classList.add('card-text');
+                packageUrl.innerHTML = `Package URL: <span>${model.modelUrl}</span>`;
+                cardBody.appendChild(packageUrl);
+
+                const cost = document.createElement('p');
+                cost.innerHTML = `Cost ~ <strong>5-10 Tokens</strong>`;
+                cardBody.appendChild(cost);
+
+                const openBtn = document.createElement('a');
+                openBtn.classList.add('btn', 'btn-primary');
+                openBtn.role = 'button';
+                openBtn.href = model.url; // Assign the model URL directly
+                openBtn.target = '_blank';
+                openBtn.innerText = 'Open';
+                cardBody.appendChild(openBtn);
+
+                card.appendChild(cardBody);
+
+                document.getElementById('modelsContainer').appendChild(card);
+            }
+        })
+        .catch(error => console.error(error));
+</script>
+<!-- Start: Greet --><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>$(document).ready(function() {
   function dateTime() {
     var ndate = new Date();
@@ -211,64 +263,7 @@ Number.prototype.leadingZeroes = function(len) {
   return (new Array(len).fill('0', 0).join('') + this).slice(-Math.abs(len));
 }
 </script>
-            <div class="container">
-                <div class="row" style="margin-bottom: 100px;">
-                    <div class="col-md-4">
-                        <div class="card" style="color: rgb(0,0,0);">
-                            <div class="card-header">
-                                <h5 class="mb-0">Blu Chat&nbsp;<span style="color: var(--bs-blue);font-size: 15px;border-width: 0.25px;border-style: solid;border-radius: 3px;padding: 2px;">Beta</span></h5>
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text">Interact with our flagship chat models, almost ChatGPT, just optimized for education (And yes, it can talk about other things too.)</p>
-                                <p>Cost ~ <strong>10 Tokens / Chat</strong></p><a class="btn btn-primary" role="button" href="chat.html" target="_blank">Open Chat</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card" style="color: rgb(0,0,0);">
-                            <div class="card-header">
-                                <h5 class="mb-0">Imaginator&nbsp;&nbsp;<span style="color: var(--bs-blue);font-size: 15px;border-width: 0.25px;border-style: solid;border-radius: 3px;padding: 2px;">Beta</span></h5>
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text">Using <strong>DALLE </strong>and other <strong>world-class </strong>AI Image creators, imaginator perfects your image to its best.</p>
-                                <p>Cost ~ <strong>5 Tokens / Image</strong></p><a class="btn btn-primary" role="button" href="imaginator.html" target="_blank">Open Imaginator</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card" style="color: rgb(0,0,0);">
-                            <div class="card-header">
-                                <h5 class="mb-0">Drive&nbsp;&nbsp;<span style="color: var(--bs-blue);font-size: 15px;border-width: 0.25px;border-style: solid;border-radius: 3px;padding: 2px;">Beta</span></h5>
-                            </div>
-                            <div class="card-body"><p class="card-text">All your AI stuff is saved here.<br>
-    👇<br>
-                                <p>Cost ~ <strong>Free</strong></p><button class="btn btn-secondary" type="button">Open Drive</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-lg-7" style="margin-top: 25px;">
-                        <div class="card" style="color: rgb(0,0,0);">
-                            <div class="card-header">
-                                <h5 class="mb-0">Create your Own AI Model&nbsp;&nbsp;<span style="color: var(--bs-form-invalid-color);font-size: 15px;border-width: 0.25px;border-style: solid;border-radius: 3px;padding: 2px;">Alpha-Beta</span></h5>
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text">The next gen phase</p>
-                                <p>Cost ~ <strong>5-10 Tokens</strong></p><a class="btn btn-secondary" role="button" href="create_model.html" target="_blank">Create model</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col"><div class="card" style="color: rgb(0,0,0);">
-    <div class="card-header">
-        <h5 class="mb-0">Model Name<span style="color: var(--bs-form-invalid-color);font-size: 15px;border-width: 0.25px;border-style: solid;border-radius: 3px;padding: 2px;">Beta</span></h5>
-    </div>
-    <div class="card-body">
-        <p class="card-text">This is a description</p>
-        <p class="card-text">Package Url: <span>{location}</span></p>
-        <p>Cost ~ <strong>5-10 Tokens</strong></p><a class="btn btn-secondary" role="button" href="create_model.html" target="_blank">Open</a>
-    </div>
-</div></div>
-                </div>
-            </div>
+            <div class="container"></div>
         </div>
     </div>
     <script src="../assets/bootstrap/js/bootstrap.min.js?h=b4349cf7232e6b66621e089f2b9beee5"></script>
