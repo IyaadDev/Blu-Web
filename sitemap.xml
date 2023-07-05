@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
-        <loc>https://copilot.schooltool.io/dashboard/acc.html</loc>
-    </url>
-    <url>
         <loc>https://copilot.schooltool.io/dashboard/account.html</loc>
-    </url>
-    <url>
-        <loc>https://copilot.schooltool.io/dashboard/ask.html</loc>
     </url>
     <url>
         <loc>https://copilot.schooltool.io/dashboard/chat.html</loc>
     </url>
     <url>
-        <loc>https://copilot.schooltool.io/dashboard/composer.html</loc>
+        <loc>https://copilot.schooltool.io/dashboard/cowrite.html</loc>
     </url>
     <url>
         <loc>https://copilot.schooltool.io/dashboard/create_model.html</loc>

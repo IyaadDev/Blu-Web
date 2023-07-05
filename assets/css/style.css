@@ -373,3 +373,9 @@ body {
 .text-muted {
 }
 
+.stylet {
+  background: #e96443;
+  background: -webkit-linear-gradient(to right, #904e95, #e96443);
+  background: linear-gradient(16deg, #ee00ff 0%, #ff3f0f);
+}
+

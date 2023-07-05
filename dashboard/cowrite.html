@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Copilot Dashboard</title>
-    <link rel="canonical" href="https://copilot.schooltool.io/dashboard/create_model.html">
-    <meta property="og:url" content="https://copilot.schooltool.io/dashboard/create_model.html">
+    <title>Chat - Cambridge Copilot</title>
+    <link rel="canonical" href="https://copilot.schooltool.io/dashboard/cowrite.html">
+    <meta property="og:url" content="https://copilot.schooltool.io/dashboard/cowrite.html">
     <meta name="twitter:description" content="An Ultra-Advanced AI-Copilot for Students and teachers">
     <meta name="twitter:card" content="summary">
     <meta property="og:type" content="website">
@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="../assets/css/style.css?h=bd5f54dd6dae7ef20dac19e4bde6b1cc">
 </head>
 
-<body class="text-center" style="color: rgb(255,255,255);background: rgb(0,0,0);">
+<body class="text-center emailWriterBackground">
     <!-- Start: Navbar With Button -->
     <nav class="navbar navbar-light navbar-expand-lg sticky-top py-3" style="background: var(--bs-navbar-hover-color);padding: 0px;">
         <div class="container"><a class="navbar-brand d-flex align-items-center" href="index.html"><img src="../assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f" style="height: auto;width: 30px;background: linear-gradient(var(--bs-red), var(--bs-blue));border-radius: 6px;margin-right: 10px;" width="50" height="67"><span style="color: #ffffff;font-weight: bold;">Copilot</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1" style="color: var(--bs-white);background: #ffffff;"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
@@ -117,13 +117,32 @@
             </div>
         </div>
     </nav><!-- End: Navbar With Button -->
-    <div class="container text-center d-md-flex justify-content-md-center">
-        <div class="text-center" style="border-radius: 4px;margin: 16px;height: 100%;width: 100%;background: linear-gradient(33deg, #f3f4f9, #f3e4ff 50%, #cee2ff 100%);">
-            <h1 style="color: rgb(0,0,0);margin: 25px;font-size: 4vw;"><strong>Create your own, custom AI Model!</strong></h1>
-            <p style="color: rgb(0,0,0);margin: 10px;">Spin up anything you like, create your own model for FREE! We'll process your model within 24 hours</p>
-            <div class="text-center d-lg-flex justify-content-lg-center align-items-lg-center" style="width: 100%;height: auto;">
-                <div style="width: 90%;height: auto;border-radius: 15px;margin: 20px;"><iframe width="100%" height="480px" style="border-radius: 10px;" src="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=gENNZk1Nw0yUf0PCq4224VPOlv08PYRFqpagZ0vpOWpUMVFFMExCOTROV1FTMDkzUkQzRjgzUjUxUS4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe><a class="btn btn-primary" role="button" style="margin-top: 25px;" href="dash.html">Done? Go back to Dashboard</a></div>
-            </div>
+    <h1 class="display-1" style="margin-top: 24px;">CoWrite</h1>
+    <p>Your copilot writer for ideas, emails and so much more!</p>
+    <div class="container text-center d-md-flex justify-content-md-center align-items-md-center" style="padding: 10px;">
+        <div class="text-start" style="width:90%;padding:25px;background:#000000;border-radius:10px;">
+            <h3 class="text-start">Type</h3><select class="form-select-lg" style="color:#000000;box-shadow:7px 5px 6px #2d2d2d;border-style:none;width:100%;background:#a8c0ff;background:-webkit-linear-gradient(to right, #3f2b96, #a8c0ff);background:linear-gradient(-5deg, #3f2b96, #a8c0ff), #a8c0ff;" name="type">
+                <optgroup label="What do you want to write today?">
+                    <option value="12">Email</option>
+                    <option value="13">Paragraph</option>
+                    <option value="14">Ideas</option>
+                </optgroup>
+            </select>
+            <h3 class="text-start" style="margin-top:8px;">What's it about?</h3><input type="text" class="form-control-lg" style="color: rgb(0,0,0);box-shadow: 7px 5px 6px #2d2d2d;border-style: none;width: 100%;background: #40E0D0;background: #ffffff;" placeholder="Type here..." name="about">
+            <h3 class="text-start" style="margin-top:8px;">Style</h3><select class="form-select-lg stylet" style="color:#000000;box-shadow:7px 5px 6px #2d2d2d;border-style:none;width:100%;background:#e96443;background:-webkit-linear-gradient(to right, #904e95, #e96443);background:linear-gradient(16deg, #ee00ff 0%, #ff3f0f), #eb7bb1;" name="type">
+                <optgroup label="How do you like your text served?">
+                    <option value="12" selected="">Professional</option>
+                    <option value="13">Casual</option>
+                    <option value="14">Funny</option>
+                </optgroup>
+            </select>
+            <h3 class="text-start" style="margin-top:8px;">Size</h3><select class="form-select-lg" style="color:#000000;box-shadow:7px 5px 6px #2d2d2d;border-style:none;width:100%;background:#00b09b;background:-webkit-linear-gradient(to right, #96c93d, #00b09b);background:linear-gradient(to right, #96c93d, #00b09b), #00b09b;" name="type">
+                <optgroup label="How long should this be?">
+                    <option value="12" selected="">Short - 150 Words</option>
+                    <option value="13">Medium - 300 Words</option>
+                    <option value="14">Long - 450 Words</option>
+                </optgroup>
+            </select><button class="btn btn-primary" type="button" style="margin-top:2vw;width:100%;">Generate</button>
         </div>
     </div>
     <script src="../assets/bootstrap/js/bootstrap.min.js?h=b4349cf7232e6b66621e089f2b9beee5"></script>
