@@ -23,13 +23,13 @@
     <link rel="manifest" href="../manifest.json?h=5f35deaa20178483e7bf3963621308e0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css?h=4a0a5888449ae2bad1cf0c0f1eb40cf4">
-    <link rel="stylesheet" href="../assets/css/bs-info.css?h=15b43fafd5928244e49dc20add914164">
-    <link rel="stylesheet" href="../assets/css/style.css?h=6c6552426e1a98ad1aaabcdfb9adaeb9">
+    <link rel="stylesheet" href="../assets/css/bs-info.css?h=711a88cb3b3176ac8372305795ee60c0">
+    <link rel="stylesheet" href="../assets/css/style.css?h=0983487b85e933f5b34703b408387874">
 </head>
 
-<body class="text-center" style="background: #0F2027;/*background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);*/background: linear-gradient(to right, #2C5364, #203A43, #0F2027);">
+<body class="text-center" style="background: #0052D4;background: -webkit-linear-gradient(to bottom, #6FB1FC, #4364F7, #0052D4);background: linear-gradient(104deg, #6FB1FC, #4364F7, #0052D4);">
     <!-- Start: Navbar With Button -->
-    <nav class="navbar navbar-expand-lg sticky-top py-3 navbar-light" style="background: var(--bs-navbar-hover-color);padding: 0px;">
+    <nav class="navbar navbar-expand-lg sticky-top py-3 navbar-light" style="background: var(--bs-navbar-color);padding: 0px;">
         <div class="container"><a class="navbar-brand d-flex align-items-center" href="index.html"><img src="../assets/img/final_transparent.webp?h=1919b81e621ce6a871984f09988e467f" style="height: auto;width: 30px;background: linear-gradient(var(--bs-red), var(--bs-blue));border-radius: 6px;margin-right: 10px;" width="50" height="67"><span style="color: #ffffff;font-weight: bold;">Copilot</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1" style="color: var(--bs-white);background: #ffffff;"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav me-auto">
@@ -120,7 +120,7 @@
         </div>
     </nav><!-- End: Navbar With Button -->
     <div class="container">
-        <div class="chat-container" style="padding: 0px;">
+        <div class="chat-container" style="padding: 0px;background: rgba(0,0,0,0.5);">
             <div class="container" style="height: auto;min-height: 250px;padding: 0px;margin-bottom: -170px;max-height: 250px;"><div class="container" id="chat-messages"></div></div>
             <div></div>
         </div>
@@ -128,7 +128,7 @@
             <!-- Start: Msg -->
             <div class="row text-center d-md-flex d-lg-flex justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center" style="position: fixed;bottom: 0;margin-bottom: 10px;width: 75vw;">
                 <div class="col-md-10 col-xxl-8 d-lg-flex justify-content-lg-center" style="width: 80%;"><input class="form-control-lg form-control" type="text" id="user-input" placeholder="Type a message..." style="width: 100%;padding: 15px;padding-top: 10px;border-radius: 65px;height: 100%;padding-bottom: 10px;border: 0.1px solid rgb(94,94,94);color: rgb(0,0,0)!important;" autofocus="" required="" minlength="1" maxlength="500"></div>
-                <div class="col-sm-2 col-md-1 col-lg-1 col-xxl-3 text-center d-md-flex justify-content-md-center align-items-md-center justify-content-lg-center" style="width: 20%;"><button class="btn btn-primary btn-lg text-center d-lg-flex justify-content-lg-center align-items-lg-center" type="submit" id="send-button" style="float: right;padding: 0px;width: auto;padding-left: 5px;padding-right: 5px;height: 100%;min-height: 48px;"><i class="fa fa-send" style="font-size: 2.5vw;margin: 5px;padding: 7px;"></i></button></div>
+                <div class="col-sm-2 col-md-1 col-lg-1 col-xxl-3 text-center d-md-flex justify-content-md-center align-items-md-center justify-content-lg-center" style="width: 20%;"><button class="btn btn-primary btn-lg text-center d-lg-flex justify-content-lg-center align-items-lg-center cool-glow-on-hover" type="submit" id="send-button" style="float: right;padding: 0px;width: auto;padding-left: 5px;padding-right: 5px;height: 100%;min-height: 48px;background: rgb(0,0,0);"><i class="fa fa-send" style="font-size: xx-large;padding: 5px;margin: 5px;"></i></button></div>
             </div><!-- End: Msg -->
         </div><!-- Start: JavaScript --><script>
   const chatMessages = document.getElementById('chat-messages');
